@@ -1,0 +1,40 @@
+.app {
+  padding: 5px;
+}
+
+body {
+  background-color: bg-primary;
+}
+
+header,
+footer {
+  min-height: 20vh;
+
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* background-color: #282c34; */
+  /* color: white; */
+
+  text-align: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.company-information,
+.eye-catchers,
+.eye-catcher,
+.current-news,
+.news-post,
+.book-commercials {
+  padding: 10px;
+  /* border: 2px orange solid; */
+}
+
+
+
+.current-news {
+  display: flex;
+}

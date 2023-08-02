@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# pstackebrandt.github.io
+
+- simple homepage with react, to be published with github pages
+- react app now directly in root folder, not in subfolder 
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
