@@ -12,20 +12,12 @@
     <title>React App</title>
     <script defer="defer" src="/static/js/main.2f820a34.js"></script>
     <link href="/static/css/main.5f8ca46f.css" rel="stylesheet">
+    <script>
+        sessionStorage.redirect = location.href;
+    </script>
 </head>
 
-<body>
-    <script>
-        (function () {
-            var redirect = sessionStorage.redirect;
-            delete sessionStorage.redirect;
-            if (redirect && redirect != location.href) {
-                history.replaceState(null, null, redirect);
-            }
-        })();
-    </script>
-
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+<body><noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 </body>
 
