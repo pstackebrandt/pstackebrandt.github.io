@@ -53,6 +53,7 @@
   },
   "overrides": {
     "nth-check": "^2.1.1",
-    "css-select": "^5.1.0"
+    "css-select": "^5.1.0",
+    "resolve-url-loader": "^5.0.0"
   }
 }
