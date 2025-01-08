@@ -1,0 +1,40 @@
+// Welcome component styles
+.welcome {
+    // Container styles (previously ms-5 me-5)
+    &__container {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+
+    // Title styles (previously mt-5 m-5 text-center)
+    &__title {
+        margin-top: 3rem;
+        margin: 3rem;
+        text-align: center;
+    }
+
+    // Text styles (previously text-center mb-2 fs-5)
+    &__text {
+        text-align: center;
+        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+    }
+
+    // List styles
+    &__list {
+        text-align: center;
+        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+        list-style-position: inside;
+        padding-left: 0;
+    }
+
+    &__link {
+        color: inherit;
+        text-decoration: underline;
+        
+        &:hover {
+            text-decoration: none;
+        }
+    }
+} 
