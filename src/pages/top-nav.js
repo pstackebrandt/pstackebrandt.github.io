@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 
 function TopNav() {
   return (
-    <Nav className="nav-centered nav-item-fill mt-3">
+    <Nav>
       <Nav.Item>
         <Nav.Link href="/">Home</Nav.Link>
       </Nav.Item>

@@ -1,8 +1,10 @@
+// file: bottom-nav.js
+
 import Nav from 'react-bootstrap/Nav';
 
 function BottomNav() {
   return (
-    <Nav className="nav-centered nav-item-fill mt-3">
+    <Nav className="nav-bottom">
       <Nav.Item>
         <Nav.Link href="/">Home</Nav.Link>
       </Nav.Item>
