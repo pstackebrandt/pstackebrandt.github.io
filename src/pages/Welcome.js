@@ -9,11 +9,15 @@ export default function Welcome() {
         <div className="welcome ms-5 me-5">
             <PageTitle />
             <h1 className="mt-5 m-5 text-center">Willkommen</h1>
-            <p className="text-center mb-2 fs-5">Diese Webseite befindet sich aktuell noch in der Entwicklungsphase.</p>
-            <p className="text-center mb-2 fs-5">Ich verwende sie als einfache Homepage und werde mit ihr auf andere Projekte
-             und Seiten von mir verweisen.</p>
-            <p className="text-center mb-2 fs-5">Zusätzlich ist diese Webseite ein aktuelles Übungsprojekt für das Erstellen
-             von React-Anwendungen sowie für das Hosten mit GitHub Pages.</p>
+            <p className="text-center mb-2 fs-5">Ich bin Peter Stackebrandt, Softwareentwickler aus Feucht bei Nürnberg mit langjähriger Erfahrung in der Entwicklung von Apps und Services mit .NET. Neben meiner Leidenschaft für Webentwicklung interessiere ich mich besonders für den Einsatz von KI in der Softwareentwicklung.</p>
+            <p className="text-center mb-2 fs-5">Diese Webseite ist eine zentrale Anlaufstelle, um mehr über meine Arbeit und meine Projekte zu erfahren. Derzeit arbeite ich daran, öffentlich zugängliche Links zu meinen Projekten hier zu sammeln und zu präsentieren.</p>
+            <p className="text-center mb-2 fs-5">Bereits verfügbare Links:</p>
+            <ul className="text-center mb-2 fs-5">
+                <li><a href="https://github.com/pstackebrandt">Mein GitHub Repository</a>: Enthält den Code vieler Übungsprojekte.</li>
+                <li><a href="https://www.linkedin.com/in/">Mein LinkedIn-Profil</a>:Ausführliche Informationen zu meinem beruflichen Profil</li>
+                <li><a href="https://www.bilderbrand.net/">Bilderbrand.net</a>: Eine private Homepage, die ich mit WordPress erstellt habe.</li>
+            </ul>
+            <p className="text-center mb-2 fs-5">Diese Webseite dient zusätzlich als persönliches Projekt, um moderne Webtechnologien wie React zu erlernen und anzuwenden.</p>
         </div>
     );
 }
