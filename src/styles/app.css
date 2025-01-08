@@ -8,14 +8,14 @@ body {
 
 header,
 footer {
-  min-height: 10vh;
+  min-height: 8vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-size: clamp(14px, calc(10px + 1.5vmin), 20px);
-  padding: 1rem;
+  padding: 0.5rem;
   
   @media (max-width: 768px) {
     min-height: 8vh;
