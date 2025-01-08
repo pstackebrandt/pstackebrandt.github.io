@@ -8,19 +8,38 @@ body {
 
 header,
 footer {
-  min-height: 20vh;
-
+  min-height: 10vh;
   display: flex;
-
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  /* background-color: #282c34; */
-  /* color: white; */
-
   text-align: center;
-  font-size: calc(10px + 2vmin);
+  font-size: clamp(14px, calc(10px + 1.5vmin), 20px);
+  padding: 1rem;
+  
+  @media (max-width: 768px) {
+    min-height: 8vh;
+  }
+}
+
+.nav-centered {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.nav-item-fill .nav-item {
+  flex: 1;
+  text-align: center;
+  
+  @media (max-width: 480px) {
+    width: 100%;
+  }
 }
 
 .company-information,
@@ -29,12 +48,14 @@ footer {
 .current-news,
 .news-post,
 .book-commercials {
-  padding: 10px;
-  /* border: 2px orange solid; */
+  padding: clamp(10px, 2vw, 20px);
 }
-
-
 
 .current-news {
   display: flex;
+  gap: 1rem;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 }

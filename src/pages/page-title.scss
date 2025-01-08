@@ -1,0 +1,10 @@
+@import '../styles/variables';
+
+.container {
+  padding: 1rem;
+  
+  @media (max-width: $breakpoint-md) {
+    padding: 0.75rem;
+  }
+  // ... rest of the file remains the same
+} 

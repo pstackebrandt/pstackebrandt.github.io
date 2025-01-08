@@ -1,0 +1,48 @@
+// Navigation styles
+.nav {
+  &-centered {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    .nav-item {
+      margin: 0;
+      
+      .nav-link {
+        color: var(--bs-dark);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        
+        &:hover {
+          color: var(--bs-primary);
+        }
+      }
+    }
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .nav-item {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// Override Bootstrap defaults when needed
+.nav-item-fill {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.nav-link-dark {
+  --bs-nav-link-color: var(--bs-dark);
+  --bs-nav-link-hover-color: var(--bs-primary);
+} 

@@ -41,7 +41,7 @@ export default function RootLayout() {
 
     function Footer() {
         return (
-            <footer className="text-center fixed-bottom">
+            <footer className="text-center">
                 <BottomNav />
             </footer>
         );
