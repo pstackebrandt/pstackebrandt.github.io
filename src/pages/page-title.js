@@ -11,7 +11,7 @@ function PageTitle() {
     return (
         <div className="container mt-0 text-primary">
             <h1 className="display-5">{pageTitleAndSubtitle.title}</h1>
-            <p className="lead">{pageTitleAndSubtitle.subtitle}</p>
+            <p className="lead fs-2">{pageTitleAndSubtitle.subtitle}</p>
         </div>
     );
 }
