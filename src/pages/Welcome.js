@@ -13,10 +13,12 @@ export default function Welcome() {
 
                 <p className="welcome__text">Diese Webseite ist eine zentrale Anlaufstelle, um mehr über meine Fertigkeiten und meine Projekte zu erfahren. Derzeit arbeite ich daran, hier öffentlich zugängliche Links zu meinen Projekten zu sammeln und zu präsentieren.</p>
 
-                <a className="welcome__link" href="https://www.linkedin.com/in/" target="_blank" rel="noopener noreferrer">
-                    Mein LinkedIn-Profil
-                </a>
-                <span>Ausführliche Informationen zu meinem beruflichen Profil</span>
+                <div className="single-link-with-description">
+                    <a className="welcome__link" href="https://www.linkedin.com/in/" target="_blank" rel="noopener noreferrer">
+                        Mein LinkedIn-Profil
+                    </a>
+                    <span className="single-link-description">Ausführliche Informationen zu meinem beruflichen Profil</span>
+                </div>
 
                 <p className="welcome__subtitle">Projekte</p>
                 <ul className="welcome__list">

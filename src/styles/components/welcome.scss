@@ -148,3 +148,23 @@
         }
     }
 }
+
+.single-link-with-description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+    
+    .welcome__link {
+        margin-bottom: 0;  // Override existing margin
+    }
+    
+    .single-link-description {
+        color: var(--bs-body-color);
+        font-size: 1.1rem;
+        
+        @media (max-width: 768px) {
+            font-size: 1rem;
+        }
+    }
+}
