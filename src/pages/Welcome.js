@@ -22,29 +22,29 @@ export default function Welcome() {
                 <ul className="welcome__list">
                     <li>
                         <a className="welcome__link" href="https://pstackebrandt.github.io/gas-costs-app/" target="_blank" rel="noopener noreferrer">
-                            Fahrtkosten-Rechner-App
+                            Fahrtkosten-Rechner
                         </a>
-                        <span>Berechnet die Kosten für eine Fahrt anhand gefahrener Kilometer, des Kraftstoffverbrauchs und des Kraftstoffpreises.
-                            (React App, nicht responsiv)
+                        <span>Die App berechnet die Kosten für eine Fahrt anhand gefahrener Kilometer, des Kraftstoffverbrauchs und des Kraftstoffpreises.
+                            (React App, noch nicht responsiv)
                         </span>
                     </li>
                     <li>
                         <a className="welcome__link" href="https://github.com/pstackebrandt" target="_blank" rel="noopener noreferrer">
                             Mein GitHub Repository
                         </a>
-                        <span>Enthält den Code vieler Übungsprojekte.</span>
+                        <span>Es enthält den Code von Übungsaufgaben und -projekten. Diese sind zwar meistens öffentlich zugänglich, bleiben ohne ihren Kontext aber häufig erklärungsbedürftig.</span>
                     </li>
                     <li>
                         <a className="welcome__link" href="https://www.bilderbrand.net/" target="_blank" rel="noopener noreferrer">
                             Bilderbrand.net
                         </a>
-                        <span>Meine private Homepage, die ich mit WordPress erstellt habe.</span>
+                        <span>Eine private Homepage, die ich mit WordPress erstellt habe.</span>
                     </li>
                     <li>
                         <a className="welcome__link" href="/" target="_blank" rel="noopener noreferrer">
-                            Die Webseite,
+                            Die aktuelle Webseite
                         </a>
-                        <span>die sie gerade besuchen, ist ebenfalls ein Trainingsprojekt. Sie ist responsiv und wurde mit React, React Router und SCSS geschrieben.</span>
+                        <span>ist ebenfalls ein Trainingsprojekt. Sie ist responsiv und wurde mit React, React Router und SCSS geschrieben.</span>
                     </li>
                 </ul>
             </div>
