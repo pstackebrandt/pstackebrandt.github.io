@@ -1,6 +1,7 @@
 import React from "react"
 import PageTitle from '../pages/page-title';
 import '../styles/components/welcome.scss';
+import LinkCard from '../components/LinkCard';
 
 // Main content of the page
 export default function Welcome() {
@@ -23,39 +24,39 @@ export default function Welcome() {
                 <p className="welcome__subtitle">Projekte</p>
                 <ul className="welcome__list">
                     <li>
-                        <a className="welcome__link" href="https://pstackebrandt.github.io/hacker-stories/" target="_blank" rel="noopener noreferrer">
-                        Your Hacker Stories
-                        </a>
-                        <span>Ein React-Trainingsprojekt, das moderne Webentwicklungskonzepte an einem praxisnahen Beispiel veranschaulicht: einer Webanwendung, die es Nutzern ermöglicht, technologiebezogene Nachrichtenartikel von Hacker News zu suchen und zu durchsuchen. Hacker News ist eine renommierte Plattform für Tech-Nachrichten und Diskussionen, die besonders in der Entwickler-Community geschätzt wird. Die Anwendung bietet Nutzern die Möglichkeit, nach Themen zu suchen, die sie interessieren, die Anzahl der Likes jedes Artikels einzusehen und Kommentare aus der Tech-Community zu lesen.
-
-                        </span>
+                        <LinkCard
+                            href="https://pstackebrandt.github.io/hacker-stories/"
+                            text="Your Hacker Stories"
+                            description="Ein React-Trainingsprojekt, das moderne Webentwicklungskonzepte an einem praxisnahen Beispiel veranschaulicht: einer Webanwendung, die es Nutzern ermöglicht, technologiebezogene Nachrichtenartikel von Hacker News zu suchen und zu durchsuchen. Hacker News ist eine renommierte Plattform für Tech-Nachrichten und Diskussionen, die besonders in der Entwickler-Community geschätzt wird. Die Anwendung bietet Nutzern die Möglichkeit, nach Themen zu suchen, die sie interessieren, die Anzahl der Likes jedes Artikels einzusehen und Kommentare aus der Tech-Community zu lesen."
+                        />
                     </li>
                     <li>
-                        <a className="welcome__link" href="https://pstackebrandt.github.io/gas-costs-app/" target="_blank" rel="noopener noreferrer">
-                            Fahrtkosten-Rechner
-                        </a>
-                        <span>Die App berechnet die Kosten für eine Fahrt anhand gefahrener Kilometer, des Kraftstoffverbrauchs und des Kraftstoffpreises.
-                            (React App, noch nicht responsiv)
-                        </span>
+                        <LinkCard
+                            href="https://pstackebrandt.github.io/gas-costs-app/"
+                            text="Fahrtkosten-Rechner"
+                            description="Die App berechnet die Kosten für eine Fahrt anhand gefahrener Kilometer, des Kraftstoffverbrauchs und des Kraftstoffpreises. (React App, noch nicht responsiv)"
+                        />
                     </li>
                     <li>
-                        <a className="welcome__link" href="https://github.com/pstackebrandt" target="_blank" rel="noopener noreferrer">
-                            Mein GitHub Repository
-                        </a>
-                        <span>Es enthält den Code von Übungsaufgaben und -projekten. Diese sind zwar meistens öffentlich zugänglich, bleiben ohne ihren Kontext aber häufig erklärungsbedürftig.</span>
+                        <LinkCard
+                            href="https://github.com/pstackebrandt"
+                            text="Mein GitHub Repository"
+                            description="Es enthält den Code von Übungsaufgaben und -projekten. Diese sind zwar meistens öffentlich zugänglich, bleiben ohne ihren Kontext aber häufig erklärungsbedürftig."
+                        />
                     </li>
                     <li>
-                        <a className="welcome__link" href="https://www.bilderbrand.net/" target="_blank" rel="noopener noreferrer">
-                            Bilderbrand.net
-                        </a>
-                        <span>Eine private Homepage, die ich mit WordPress erstellt habe.</span>
+                        <LinkCard
+                            href="https://www.bilderbrand.net/"
+                            text="Bilderbrand.net"
+                            description="Eine private Homepage, die ich mit WordPress erstellt habe."
+                        />
                     </li>
-
                     <li>
-                        <a className="welcome__link" href="/" target="_blank" rel="noopener noreferrer">
-                            Die aktuelle Webseite
-                        </a>
-                        <span>ist ebenfalls ein Trainingsprojekt. Sie ist responsiv und wurde mit React, React Router und SCSS geschrieben.</span>
+                        <LinkCard
+                            href="/"
+                            text="Die aktuelle Webseite"
+                            description="ist ebenfalls ein Trainingsprojekt. Sie ist responsiv und wurde mit React, React Router und SCSS geschrieben."
+                        />
                     </li>
                 </ul>
             </div>
