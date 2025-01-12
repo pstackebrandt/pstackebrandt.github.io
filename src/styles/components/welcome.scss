@@ -121,7 +121,7 @@
     }
 }
 
-.single-link-with-description {
+.link-with-description {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -139,7 +139,7 @@
         margin-bottom: 0;  // Override existing margin
     }
     
-    .single-link-description {
+    .link-description {
         color: var(--bs-body-color);
         font-size: 1.1rem;
         
