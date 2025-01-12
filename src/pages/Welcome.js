@@ -23,6 +23,14 @@ export default function Welcome() {
                 <p className="welcome__subtitle">Projekte</p>
                 <ul className="welcome__list">
                     <li>
+                        <a className="welcome__link" href="https://pstackebrandt.github.io/hacker-stories/" target="_blank" rel="noopener noreferrer">
+                        Your Hacker Stories
+                        </a>
+                        <span>Ein React-Trainingsprojekt, das moderne Webentwicklungskonzepte an einem praxisnahen Beispiel veranschaulicht: einer Webanwendung, die es Nutzern ermöglicht, technologiebezogene Nachrichtenartikel von Hacker News zu suchen und zu durchsuchen. Hacker News ist eine renommierte Plattform für Tech-Nachrichten und Diskussionen, die besonders in der Entwickler-Community geschätzt wird. Die Anwendung bietet Nutzern die Möglichkeit, nach Themen zu suchen, die sie interessieren, die Anzahl der Likes jedes Artikels einzusehen und Kommentare aus der Tech-Community zu lesen.
+
+                        </span>
+                    </li>
+                    <li>
                         <a className="welcome__link" href="https://pstackebrandt.github.io/gas-costs-app/" target="_blank" rel="noopener noreferrer">
                             Fahrtkosten-Rechner
                         </a>
@@ -42,6 +50,7 @@ export default function Welcome() {
                         </a>
                         <span>Eine private Homepage, die ich mit WordPress erstellt habe.</span>
                     </li>
+
                     <li>
                         <a className="welcome__link" href="/" target="_blank" rel="noopener noreferrer">
                             Die aktuelle Webseite
