@@ -12,4 +12,49 @@ $font-family-code: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 
 // Layout
 $header-footer-min-height: 20vh;
-$mobile-header-footer-min-height: 10vh; 
+$mobile-header-footer-min-height: 10vh;
+
+// Colors
+// Brand Colors
+$primary: #007bff;    // Your main brand color
+$secondary: #6c757d;  // Secondary brand color
+$success: #28a745;    // Success states
+$danger: #dc3545;     // Error states
+$warning: #ffc107;    // Warning states
+$info: #17a2b8;       // Informational states
+
+// Neutral Colors
+$white: #ffffff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e4;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000000;
+
+// Semantic Colors
+$text-primary: $gray-900;
+$text-secondary: $gray-600;
+$text-muted: $gray-500;
+$link-color: $primary;
+$link-hover-color: darken($primary, 15%);
+$border-color: $gray-300;
+$background-primary: $white;
+$background-secondary: $gray-100;
+
+// Bootstrap Variable Overrides
+:root {
+  --bs-primary: #{$primary};
+  --bs-secondary: #{$secondary};
+  --bs-success: #{$success};
+  --bs-danger: #{$danger};
+  --bs-warning: #{$warning};
+  --bs-info: #{$info};
+  --bs-body-color: #{$text-primary};
+  --bs-link-color: #{$link-color};
+  --bs-link-hover-color: #{$link-hover-color};
+} 
