@@ -2,6 +2,7 @@
 .error {
   padding: clamp(1rem, 5vw, 3rem);
   text-align: center;
+  color: $text-primary;
   
   h2 {
     font-size: clamp(1.5rem, 4vw, 2.5rem);
@@ -18,5 +19,10 @@
     display: inline-block;
     margin-top: 1rem;
     font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    color: var(--bs-primary);
+    
+    &:hover {
+      color: var(--bs-link-hover-color);
+    }
   }
 } 

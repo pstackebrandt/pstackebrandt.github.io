@@ -1,8 +1,10 @@
+@import '../styles/variables';
+
 .link-card {
-    background: white;
+    background: $background-primary;
     border-radius: 8px;
     padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba($text-secondary, 0.3);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
@@ -33,7 +35,7 @@
 
     &__description {
         font-size: 1.1rem;
-        color: #666;
+        color: $text-primary;
         
         @media (max-width: 768px) {
             font-size: 1rem;

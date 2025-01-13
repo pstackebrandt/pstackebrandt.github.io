@@ -1,3 +1,5 @@
+@import '../styles/variables';
+
 .container {
   padding: 1rem;
   
@@ -10,9 +12,11 @@
   font-size: clamp(2rem, 5vw, 3.5rem);
   line-height: 1.2;
   margin-bottom: 0.5rem;
+  color: var(--bs-primary);
 }
 
 .lead {
   font-size: clamp(1rem, 3vw, 1.25rem);
   line-height: 1.4;
+  color: $text-primary;
 }

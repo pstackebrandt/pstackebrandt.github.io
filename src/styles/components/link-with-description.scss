@@ -1,3 +1,5 @@
+@import '../variables';
+
 .link-with-description {
     display: flex;
     flex-direction: column;
@@ -16,10 +18,8 @@
         @media (max-width: 768px) {
             font-size: 1.1rem;
         }
-    }
-
-    &__description {
-        color: #666;
+    }    &__description {
+        color: $text-secondary;
         font-size: 1.1rem;
         
         @media (max-width: 768px) {
