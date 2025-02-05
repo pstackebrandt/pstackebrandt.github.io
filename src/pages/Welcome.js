@@ -25,7 +25,7 @@ export default function Welcome() {
                     description={`Ausführliche Informationen zu meinem beruflichen Profil`}
                 />
 
-                <p className="welcome__subtitle">Projekte</p>
+                <p className="welcome__section-title">Projekte</p>
                 <ul className="welcome__list">
                     <li className="double-width">
                         <LinkCard

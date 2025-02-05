@@ -30,4 +30,25 @@ footer {
   @media (max-width: 768px) {
     min-height: 8vh;
   }
+}
+
+/* Footer styles */
+footer.footer {
+  position: relative;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__nav {
+  text-align: center;
+  width: 100%;
+}
+
+.footer__version {
+  position: absolute;
+  right: 1rem;
+  font-size: 0.8rem;
+  color: var(--bs-secondary);
 } 

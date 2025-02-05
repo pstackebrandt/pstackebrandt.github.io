@@ -10,6 +10,10 @@ $font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxy
 $font-family-code: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
 
+// todo reorganize font sizes, orient on project hacker-stories
+$body-font-size: 1rem;
+$section-title-font-size: clamp(1.5rem, 2vw, 2.5rem); // Adjust as needed
+
 // Layout
 $header-footer-min-height: 20vh;
 $mobile-header-footer-min-height: 10vh;

@@ -1,3 +1,5 @@
+@import '../variables';
+
 // Welcome component styles
 .welcome {
     width: 100%;
@@ -38,7 +40,9 @@
 
     &__section-title {
         @extend .welcome__titles;
-        /*unused*/
+        color: red;
+        font-size: $section-title-font-size;
+        margin-bottom: 1rem;
     }
 
     &__list {
