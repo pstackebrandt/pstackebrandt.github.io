@@ -40,9 +40,9 @@
 
     &__section-title {
         @extend .welcome__titles;
-        color: red;
         font-size: $section-title-font-size;
-        margin-bottom: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 1.25rem;
     }
 
     &__list {
