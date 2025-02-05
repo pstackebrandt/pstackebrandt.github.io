@@ -2,6 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './LinkCard.scss';
 
+/** Helper that allows to render text with line breaks ('Rendering' in React is returning JSX elements.)
+ * @param {string} text - The text to render including line break characters
+ * @returns {React.ReactNode[]} Array of React elements including line break elements
+ */
+function renderTextWithLineBreaks(text) {
+    return text.split(/\r?\n/).map((line, index, array) => (
+        <React.Fragment key={index}>
+            {line}
+            {index < array.length - 1 && <br />}
+        </React.Fragment>
+    ));
+}
+
 /**
  * A component that displays a link with an associated description
  * @param {Object} props - The component props
@@ -23,7 +36,7 @@ const LinkCard = ({ href, text, description, className = 'link-card--default' })
                 {text}
             </a>
             <span className="link-card__description">
-                {description}
+                {renderTextWithLineBreaks(description)}
             </span>
         </div>
     );
