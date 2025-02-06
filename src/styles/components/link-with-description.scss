@@ -21,6 +21,7 @@
     }    &__description {
         color: $text-secondary;
         font-size: 1.1rem;
+        white-space: pre-line;
         
         @media (max-width: 768px) {
             font-size: 1rem;

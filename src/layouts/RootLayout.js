@@ -2,6 +2,7 @@
 
 //ReactRouter Imports
 import { Outlet } from 'react-router-dom'
+import appVersion from '../config/appVersion.js'
 
 // styles
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -31,7 +32,7 @@ export default function RootLayout() {
         return (
             <>
                 <main className="text-center">
-                  
+
 
                     <Outlet />
                 </main>
@@ -41,8 +42,11 @@ export default function RootLayout() {
 
     function Footer() {
         return (
-            <footer className="text-center">
+            <footer className="footer">
                 <BottomNav />
+                <div className="footer__version">
+                    {appVersion && <span>v{appVersion}</span>}
+                </div>
             </footer>
         );
     }
