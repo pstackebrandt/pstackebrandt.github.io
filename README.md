@@ -1,11 +1,14 @@
 # pstackebrandt.github.io
 
+![GitHub last commit](https://img.shields.io/github/last-commit/pstackebrandt/pstackebrandt.github.io)
+![GitHub issues](https://img.shields.io/github/issues/pstackebrandt/pstackebrandt.github.io)
+![GitHub version](https://img.shields.io/badge/version-1.5.0-blue)
+
 - [pstackebrandt.github.io](#pstackebrandtgithubio)
   - [Purpose of app](#purpose-of-app)
   - [Setup](#setup)
   - [Run app in development mode](#run-app-in-development-mode)
   - [Prepare for deployment](#prepare-for-deployment)
-    - [Increase version number](#increase-version-number)
   - [Deploy app](#deploy-app)
   - [Build app for production](#build-app-for-production)
   - [Project management](#project-management)
@@ -37,13 +40,15 @@ You may also see any lint errors in the console.
 
 ## Prepare for deployment
 
-### Increase version number
+Don't upgrade the version number in the `package.json` file manually. Use the following commands instead:
 
 ```powershell
-npm version 1.6.0
+npm version patch  # Example: For bug fixes (1.0.0 → 1.0.1)
+npm version minor  # Example: For new features (1.0.0 → 1.1.0)
+npm version major  # Example: For breaking changes (1.0.0 → 2.0.0)
 ```
 
-This will update the version number in the `package.json` file.
+Those will update the version number in the `package.json` file and trigger relative scripts.
 
 ## Deploy app
 
@@ -83,6 +88,5 @@ The app runs now directly in the root folder, not in a subfolder like its predec
 ### Publishing
 
 - The app is now published with github pages.
-- Previously I published to Netlify. Within github I watched failing checks by Netlify. Origin unknown. There seem no be no relicts in the source code.
-
-
+- Previously I published to Netlify. Within github I watched failing checks by Netlify.
+- Origin unknown. There seem no be no relicts in the source code.

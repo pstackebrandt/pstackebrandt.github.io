@@ -1,6 +1,7 @@
 {
   "name": "pstackebrandt.github.io",
-  "version": "1.6.0",
+  "_versionNote": "Do not modify version manually. Use 'npm version' command instead to ensure version badge is updated",
+  "version": "1.5.0",
   "private": true,
   "homepage": "http://pstackebrandt.github.io/",
   "dependencies": {
@@ -22,12 +23,15 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "update-badge": "node updateBadge.js",
     "build": "react-scripts build",
+    "lint:md": "markdownlint '**/*.md' --ignore node_modules",
     "postbuild": "node deploy.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "version": "node updateBadge.js && git add README.md"
   },
   "eslintConfig": {
     "extends": [
@@ -50,6 +54,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^6.3.0",
+    "markdownlint-cli": "^0.44.0",
     "sass": "^1.83.1"
   },
   "overrides": {
