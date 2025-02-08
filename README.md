@@ -1,5 +1,17 @@
 # pstackebrandt.github.io
 
+- [pstackebrandt.github.io](#pstackebrandtgithubio)
+  - [Purpose of app](#purpose-of-app)
+  - [Setup](#setup)
+  - [Run app in development mode](#run-app-in-development-mode)
+  - [Prepare for deployment](#prepare-for-deployment)
+    - [Increase version number](#increase-version-number)
+  - [Deploy app](#deploy-app)
+  - [Build app for production](#build-app-for-production)
+  - [Project management](#project-management)
+  - [History](#history)
+    - [Publishing](#publishing)
+
 ## Purpose of app
 
 This page is a simple homepage I use to link to my training projects.
@@ -13,7 +25,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-`npm start`
+```powershell
+npm start
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -25,7 +39,9 @@ You may also see any lint errors in the console.
 
 ### Increase version number
 
-`npm version 1.6.0`
+```powershell
+npm version 1.6.0
+```
 
 This will update the version number in the `package.json` file.
 
@@ -33,13 +49,17 @@ This will update the version number in the `package.json` file.
 
 Run deploy script (incl. build) and publish to github pages
 
-`npm run deploy`
+```powershell
+npm run deploy
+```
 
 This will update the `gh-pages` branch. Possibly previous installation of gh cli is required.
 
 ## Build app for production
 
+```powershell
 npm run build
+```
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
