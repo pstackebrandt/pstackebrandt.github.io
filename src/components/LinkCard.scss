@@ -1,45 +1,34 @@
-@import '../styles/variables';
+@use '../styles/variables' as *;
+@use '../styles/base/_typography' as *;
 
 .link-card {
     background: $background-primary;
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: $spacing-md;
     box-shadow: 0 2px 8px rgba($text-secondary, 0.3);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: $spacing-md;
 
     &:hover {
         transform: translateY(-4px);
         box-shadow: 0 3px 8px var(--bs-primary);
     }
 
-    &__link {
-        color: var(--bs-primary);
+    &__link { // Currently used as the heading
+        color: $color-title;
         text-decoration: underline;
-        font-size: 1.2rem;
+        font-size: $article-title-font-size;
         
-        @media (min-width: 769px) {
-            font-size: 1.3rem;
-        }
-
-        @media (max-width: 768px) {
-            font-size: 1.1rem;
-        }
-
         &:hover {
             text-decoration: none;
         }
     }
 
     &__description {
-        font-size: 1.1rem;
+        font-size: $body-text-font-size;
         color: $text-primary;
         white-space: pre-line;
-        
-        @media (max-width: 768px) {
-            font-size: 1rem;
-        }
     }
 } 
