@@ -64,5 +64,3 @@ The app runs now directly in the root folder, not in a subfolder like its predec
 
 - The app is now published with github pages.
 - Previously I published to Netlify. Within github I watched failing checks by Netlify. Origin unknown. There seem no be no relicts in the source code.
-
-
