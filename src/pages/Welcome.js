@@ -20,7 +20,7 @@ export default function Welcome() {
                 </p>
 
                 <LinkWithDescription
-                    url="https://www.linkedin.com/in/"
+                    url="https://www.linkedin.com/in/peter-stackebrandt"
                     linkText="Mein LinkedIn-Profil"
                     description={`Ausführliche Informationen zu meinem beruflichen Profil`}
                 />
