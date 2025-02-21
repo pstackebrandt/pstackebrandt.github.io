@@ -12,6 +12,7 @@
   - [Deploy app](#deploy-app)
   - [Build app for production](#build-app-for-production)
   - [Project management](#project-management)
+  - [Documentation](#documentation)
   - [History](#history)
     - [Publishing](#publishing)
 
@@ -80,6 +81,10 @@ I use github for project management.
 
 - I use the issues section to track tasks.
 - I use the projects section to track the board.
+
+## Documentation
+
+Documentation can be found in the /docs directory. See the [docs](docs/README.md) directory for more information.
 
 ## History
 
