@@ -36,7 +36,7 @@ export default function Welcome() {
                             Die Daten stammen von Hacker News, einer bekannten Plattform für Technologie-Nachrichten und Entwicklerforen.
                             Bei der Implementierung orientierte ich mich an einem Beispielprojekt aus dem Buch "The Road to React" von Robin Wieruch, entwickelte jedoch häufig eigene Lösungen.
                             
-                            (React, JavaScript, TypeScript, Vite, React Reducer, Error Handling, API-Calls, CSS Modules, SCSS)`}
+                            (React, JavaScript, TypeScript, React Reducer, Error Handling, API-Calls, CSS Modules, SCSS)`}
                         />
                     </li>
                     <li>
@@ -45,7 +45,29 @@ export default function Welcome() {
                             text="Fahrtkosten-Rechner"
                             description={`Die App berechnet die Kosten für eine Autofahrt anhand gefahrener Kilometer, des Kraftstoffverbrauchs und des Kraftstoffpreises.
                             
-                            (React, JavaScript, noch nicht responsiv)`}
+                            (React, JavaScript, TypeScript, Responsive Design, CSS Modules, SCSS)`}
+                        />
+                    </li>
+                    <li className="double-width">
+                        <LinkCard
+                            href="https://todo-rest-api-spring-boot3.onrender.com/swagger-ui/index.html"
+                            text="To-do API mit Spring Boot und Docker"
+                            description={`Diese API verwaltet Aufgaben in einer einfachen In-Memory-Liste. Sie validiert Eingaben in einer Serviceklasse und gibt HTTP-Statusmeldungen zurück. Der Link führt auf eine OpenAPI-Seite, die über die Endpunkte informiert.
+
+                            Die Anwendung wurde mit Spring Boot 3 und Java 21 entwickelt. Sie ist mithilfe von Docker auf Amazon Corretto Alpine Linux containerisiert. Da sie kostenlos gehostet wird und das Image 530 MB groß ist, wird die Anwendung nach Inaktivität deaktiviert. Es kann bis zu 50 Sekunden dauern, bis sie wieder verwendbar ist.
+
+                            Als Teil des Entwicklungsprozesses sorgen automatisierte Slice-Tests mit MockMVC sowie versionierte REST-Client-Tests für eine verlässliche Qualitätsprüfung. Dieses Setup veranschaulicht nicht nur einen unkomplizierten Ansatz für REST, sondern auch eine effiziente Containerisierung und einen reibungslosen Bereitstellungsprozess.
+                            
+                            (Spring Boot 3, Java 21, Docker, OpenAPI, Error Handling, Slice-Tests, REST-Client-Tests, automatische Build- und Dokumentationsupdates)`}
+                        />
+                    </li>
+                    <li>
+                        <LinkCard
+                            href="https://github.com/pstackebrandt"
+                            text="Meine GitHub Repositorys"
+                            description={`Die Repositorys beinhalten Code zu zahlreichen Übungsaufgaben und Projekten. Obwohl der Großteil öffentlich zugänglich ist, fehlt oft der nötige Kontext, um Zweck und Details des Codes vollständig zu erschließen.
+
+                            Für einige Projekte wird GitHub Projects als Planungswerkzeug eingesetzt. Einzelne Projekte sind öffentlich einsehbar.`}
                         />
                     </li>
                     <li className="double-width">
@@ -63,28 +85,6 @@ export default function Welcome() {
                     </li>
                     <li>
                         <LinkCard
-                            href="https://github.com/pstackebrandt"
-                            text="Meine GitHub Repositorys"
-                            description={`Die Repositorys beinhalten Code zu zahlreichen Übungsaufgaben und Projekten. Obwohl der Großteil öffentlich zugänglich ist, fehlt oft der nötige Kontext, um Zweck und Details des Codes vollständig zu erschließen.
-
-                            Für einige Projekte wird GitHub Projects als Planungswerkzeug eingesetzt. Einzelne Projekte sind öffentlich einsehbar.`}
-                        />
-                    </li>
-                    <li className="double-width">
-                        <LinkCard
-                            href="https://todo-rest-api-spring-boot3.onrender.com/swagger-ui/index.html"
-                            text="To-do API mit Spring Boot und Docker"
-                            description={`Diese API verwaltet Aufgaben in einer einfachen In-Memory-Liste. Sie validiert Eingaben in einer Serviceklasse und gibt HTTP-Statusmeldungen zurück. Der Link führt auf eine OpenAPI-Seite, die über die Endpunkte informiert.
-
-                            Die Anwendung wurde mit Spring Boot 3 und Java 21 entwickelt. Sie ist mithilfe von Docker auf Amazon Corretto Alpine Linux containerisiert. Da sie kostenlos gehostet wird und das Image 530 MB groß ist, wird die Anwendung nach Inaktivität deaktiviert. Es kann bis zu 50 Sekunden dauern, bis sie wieder verwendbar ist.
-
-                            Als Teil des Entwicklungsprozesses sorgen automatisierte Slice-Tests mit MockMVC sowie versionierte REST-Client-Tests für eine verlässliche Qualitätsprüfung. Dieses Setup veranschaulicht nicht nur einen unkomplizierten Ansatz für REST, sondern auch eine effiziente Containerisierung und einen reibungslosen Bereitstellungsprozess.
-                            
-                            (Spring Boot 3, Java 21, Docker, OpenAPI, Error Handling, Slice-Tests, REST-Client-Tests)`}
-                        />
-                    </li>
-                    <li>
-                        <LinkCard
                             href="https://www.bilderbrand.net/"
                             text="Bilderbrand.net"
                             description={`Eine kleine private Homepage, die ich mit WordPress erstellt habe.`}
@@ -98,7 +98,7 @@ export default function Welcome() {
                             
                             Es wurde mit React, React Router und SCSS entwickelt und bietet ein responsives Design für eine einfache Navigation. Dabei liegt der Fokus auf der Funktionalität als Übersichtsseite und einem komfortablen Deployment auf GitHub Pages. Features und Techniken setze ich sparsam ein.
                             
-                            (React, React Router, SCSS, Responsive Design, GitHub Pages)`}
+                            (React, React Router, SCSS, Responsive Design, automatische Dokumentationsupdates)`}
                         />
                     </li>
                 </ul>
