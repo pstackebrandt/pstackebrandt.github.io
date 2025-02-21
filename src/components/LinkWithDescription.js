@@ -12,12 +12,18 @@ import '../styles/components/link-with-description.scss';
  */
 const LinkWithDescription = ({ url, linkText, description }) => (
   <div className="link-with-description">
-    <a href={url} className="link-with-description__link">{linkText}</a>
+    <a
+      href={url}
+      className="link-with-description__link"
+      target="_blank"
+      rel="noopener noreferrer">
+      {linkText}
+    </a>
     <div className="link-with-description__description">
       <span>{description}</span>
     </div>
   </div>
-); 
+);
 
 LinkWithDescription.propTypes = {
   url: PropTypes.string.isRequired,
