@@ -3,6 +3,9 @@ import PageTitle from '../pages/page-title';
 import '../styles/components/welcome.scss';
 import LinkCard from '../components/LinkCard';
 import LinkWithDescription from '../components/LinkWithDescription';
+import portraitImageSmallWebp from '../images/peter/peter-stackebrandt-portrait-small.webp';
+import portraitImageMediumWebp from '../images/peter/peter-stackebrandt-portrait-medium.webp';
+import portraitImageLargeWebp from '../images/peter/peter-stackebrandt-portrait-large.webp';
 import portraitImageSmall from '../images/peter/peter-stackebrandt-portrait-small.jpg';
 import portraitImageMedium from '../images/peter/peter-stackebrandt-portrait-medium.jpg';
 import portraitImageLarge from '../images/peter/peter-stackebrandt-portrait-large.jpg';
@@ -16,17 +19,34 @@ export default function Welcome() {
 
                 <div className="welcome__intro">
                     <div className="welcome__image-container">
-                        <img
-                            src={portraitImageSmall}
-                            srcSet={`${portraitImageSmall} 200w, 
-                                    ${portraitImageMedium} 400w, 
-                                    ${portraitImageLarge} 800w`}
-                            sizes="(max-width: 768px) 200px,
-                                   300px"
-                            alt="Peter Stackebrandt"
-                            className="welcome__image"
-                            loading="lazy"
-                        />
+                        <picture>
+                            <source
+                                type="image/webp"
+                                srcSet={`${portraitImageSmallWebp} 200w,
+                                        ${portraitImageMediumWebp} 400w,
+                                        ${portraitImageLargeWebp} 800w`}
+                                sizes="(max-width: 768px) 200px,
+                                        (max-width: 1024px) 250px,
+                                       300px"
+                            />
+                            <source
+                                type="image/jpeg"
+                                srcSet={`${portraitImageSmall} 200w,
+                                        ${portraitImageMedium} 400w,
+                                        ${portraitImageLarge} 800w`}
+                                sizes="(max-width: 768px) 200px,
+                                        (max-width: 1024px) 250px,
+                                       300px"
+                            />
+                            <img
+                                src={portraitImageSmall}
+                                alt="Peter Stackebrandt"
+                                className="welcome__image"
+                                width="300"
+                                height="450"
+                                fetchpriority="high"
+                            />
+                        </picture>
                     </div>
 
                     <div className="welcome__text-content">
