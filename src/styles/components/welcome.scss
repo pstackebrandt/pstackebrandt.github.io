@@ -46,6 +46,43 @@
         }
     }
 
+    &__intro {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: $spacing-xl;
+        margin-bottom: $spacing-xl;
+
+        @media (max-width: $breakpoint-md) {
+            grid-template-columns: 1fr;
+            gap: $spacing-lg;
+        }
+    }
+
+    &__image-container {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+        border-radius: $border-radius-md;
+        box-shadow: 0 4px 12px rgba($text-secondary, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 16px rgba($text-secondary, 0.2);
+        }
+    }
+
+    &__text-content {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-md;
+    }
+
     // Add container padding adjustments for different screen sizes
     @media (max-width: $breakpoint-lg) {
         &__container {

@@ -3,6 +3,9 @@ import PageTitle from '../pages/page-title';
 import '../styles/components/welcome.scss';
 import LinkCard from '../components/LinkCard';
 import LinkWithDescription from '../components/LinkWithDescription';
+import portraitImageSmall from '../images/peter/peter-stackebrandt-portrait-small.jpg';
+import portraitImageMedium from '../images/peter/peter-stackebrandt-portrait-medium.jpg';
+import portraitImageLarge from '../images/peter/peter-stackebrandt-portrait-large.jpg';
 
 // Main content of the page
 export default function Welcome() {
@@ -11,19 +14,37 @@ export default function Welcome() {
             <div className="welcome__container">
                 <PageTitle />
 
-                <p className="welcome__text">
-                    Ich wohne in Feucht bei Nürnberg und habe langjährige Erfahrung in der Entwicklung von Apps und Services mit .NET. Neben meiner Leidenschaft für Webentwicklung interessiere ich mich besonders für den Einsatz von KI in der Softwareentwicklung.
-                </p>
+                <div className="welcome__intro">
+                    <div className="welcome__image-container">
+                        <img
+                            src={portraitImageSmall}
+                            srcSet={`${portraitImageSmall} 200w, 
+                                    ${portraitImageMedium} 400w, 
+                                    ${portraitImageLarge} 800w`}
+                            sizes="(max-width: 768px) 200px,
+                                   300px"
+                            alt="Peter Stackebrandt"
+                            className="welcome__image"
+                            loading="lazy"
+                        />
+                    </div>
 
-                <p className="welcome__text">
-                    Diese Webseite ist eine zentrale Anlaufstelle, um mehr über meine Fertigkeiten und meine Projekte zu erfahren. Derzeit arbeite ich daran, hier öffentlich zugängliche Links zu meinen Projekten zu sammeln und zu präsentieren.
-                </p>
+                    <div className="welcome__text-content">
+                        <p className="welcome__text">
+                            Ich wohne in Feucht bei Nürnberg und habe langjährige Erfahrung in der Entwicklung von Apps und Services mit .NET. Neben meiner Leidenschaft für Webentwicklung interessiere ich mich besonders für den Einsatz von KI in der Softwareentwicklung.
+                        </p>
 
-                <LinkWithDescription
-                    url="https://www.linkedin.com/in/peter-stackebrandt"
-                    linkText="Mein LinkedIn-Profil"
-                    description={`Ausführliche Informationen zu meinem beruflichen Profil`}
-                />
+                        <p className="welcome__text">
+                            Diese Webseite ist eine zentrale Anlaufstelle, um mehr über meine Fertigkeiten und meine Projekte zu erfahren. Derzeit arbeite ich daran, hier öffentlich zugängliche Links zu meinen Projekten zu sammeln und zu präsentieren.
+                        </p>
+
+                        <LinkWithDescription
+                            url="https://www.linkedin.com/in/peter-stackebrandt"
+                            linkText="Mein LinkedIn-Profil"
+                            description={`Ausführliche Informationen zu meinem beruflichen Profil`}
+                        />
+                    </div>
+                </div>
 
                 <p className="welcome__section-title">Projekte</p>
                 <ul className="welcome__list">
@@ -91,7 +112,7 @@ export default function Welcome() {
                         />
                     </li>
                     <li className="double-width">
-                        <LinkCard 
+                        <LinkCard
                             href="/"
                             text="Die aktuelle Webseite"
                             description={`Dieses Projekt ist ein kleines Trainingsprojekt, das als zentrale Plattform dient, um meine anderen Projekte miteinander zu verknüpfen.
