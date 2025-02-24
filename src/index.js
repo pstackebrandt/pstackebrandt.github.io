@@ -17,3 +17,7 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+const rootFontSize = parseFloat(getComputedStyle(document.documentElement).fontSize); // This will give you the font size in pixels
+
+console.info("Font size on the root element (1 rem) in pixels: ", rootFontSize);

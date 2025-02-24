@@ -8,33 +8,51 @@
 // Font Families
 $font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
-$font-family-code: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 
 // Semantic Font Families
 $font-family-title: $font-family-base;
 $font-family-subtitle: $font-family-title;
 $font-family-text: $font-family-title;
 
+// Font Smoothing
+$font-smoothing: (
+  webkit: antialiased,
+  moz: grayscale
+);
+
+// Apply base font settings
+:root {
+  font-family: $font-family-base;
+  -webkit-font-smoothing: map-get($font-smoothing, webkit);
+  -moz-osx-font-smoothing: map-get($font-smoothing, moz);
+}
+
 // Font Sizes
 // --------------------------------------------------------------------------
-$font-size-s: 0.8rem;
-$font-size-s-p: 0.9rem;
-$font-size-m: 1rem;
-$font-size-m-p: 1.2rem; 
-$font-size-l-m: 1.6rem;
-$font-size-l: 1.8rem;
-$font-size-xl: 2rem;
-$font-size-xxl: 2.5rem;
-$font-size-3xl: 3rem;
+$font-size-s: 0.8rem;    // 12.8px  (16px * 0.8)
+$font-size-s-p: 0.9rem;  // 14.4px  (16px * 0.9)
+$font-size-m: 1rem;      // 16px    (base)
+$font-size-m-p: 1.25rem; // 20px    (16px * 1.25)
+$font-size-l-m: 1.5rem;  // 24px    (16px * 1.5)
+$font-size-l: 1.75rem;   // 28px    (16px * 1.75)
+$font-size-xl: 2rem;     // 32px    (16px * 2)
+$font-size-xxl: 2.5rem;  // 40px    (16px * 2.5)
+$font-size-3xl: 3rem;    // 48px    (16px * 3)
 
 // Semantic Font Sizes with Responsive Scaling
-$page-title-font-size: clamp($font-size-xl, 2.4vw, $font-size-3xl);
-$page-subtitle-font-size: clamp($font-size-m-p, 1.8vw, $font-size-l);
-$section-title-font-size: clamp($font-size-xl, 2.2vw, $font-size-xxl);
-$article-title-font-size: clamp($font-size-l-m, 2vw, $font-size-l);
-$body-text-font-size: clamp($font-size-m, 1.8vw, $font-size-m-p);
-$footer-text-font-size: clamp($font-size-s, 1.6vw, $font-size-m);
-$version-text-font-size: $footer-text-font-size;
+$smallScreenMultiplier: 1.25;
+$upsize-s: 1.25;
+$upsize: 1.5;
+
+$page-title-font-size: clamp($font-size-xl, 2.4vw, $font-size-xl * $upsize);
+$section-title-font-size: clamp($font-size-xl, 2.2vw, $font-size-xl * $upsize);
+$article-title-font-size: clamp($font-size-l-m, 2vw, $font-size-l-m * $upsize);
+$page-subtitle-font-size: clamp($font-size-m-p, 1.8vw, $font-size-m-p * $upsize);
+
+//$body-text-font-size: 1.8vw;
+$body-text-font-size: clamp($font-size-m, 1.8vw, $font-size-m-p * $upsize-s);
+$footer-text-font-size: clamp($font-size-l-m, 2.5vw, $font-size-l-m * $upsize);
+$version-text-font-size: clamp($font-size-m, 2.25vw, $font-size-m-p * $upsize);
 
 // Global heading styles
 // --------------------------------------------------------------------------

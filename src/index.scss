@@ -2,32 +2,16 @@
 @use './styles/base/_typography.scss' as typo;
 
 html {
-  font-size: typo.$font-size-m;
-  
-  @media (max-width: vars.$breakpoint-m) {
-    font-size: typo.$font-size-s-p;
-  }
-  
-  @media (max-width: vars.$breakpoint-s) {
-    font-size: typo.$font-size-s;
-  }
+  font-size: 16px; // Base font size for rem calculations
 } 
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-y: scroll;
+  margin: 0; // Reset default browser margin
+  overflow-y: scroll; // Always show vertical scrollbar to prevent layout shifts
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-  font-size: 0.9em;
-  max-width: 100%;
-  overflow-x: auto;
-  padding: 0.2em 0.4em;
+:root {
+  font-family: typo.$font-family-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

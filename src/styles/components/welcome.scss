@@ -6,19 +6,18 @@
     width: 100%;
     min-height: 100vh;
 
+    // Container contains the content of the welcome component.
     &__container {
         max-width: 1050px;
         margin: 0 auto;
-        padding: 0 vars.$spacing-l;
+        padding: 0 vars.$spacing-xxl;
     }
 
+    // Text areas outside of the cards
     &__text {
-        font-size: typo.$font-size-m;
-        margin-bottom: vars.$spacing-l;
-
-        @media (max-width: vars.$breakpoint-m) {
-            margin-bottom: vars.$spacing-l;
-        }
+        font-size: typo.$body-text-font-size;
+        padding: vars.$spacing-m;
+        margin: vars.$spacing-s auto;
     }
 
     &__titles {
@@ -27,7 +26,7 @@
 
     &__section-title { // used 
         @extend .welcome__titles;
-        font-size: typo.$font-size-l;
+        font-size: typo.$section-title-font-size;
         margin-top: vars.$spacing-xl;
         margin-bottom: vars.$spacing-l;
     }
@@ -60,7 +59,8 @@
     &__image-container {
         width: 100%;
         max-width: 300px;
-        margin: 0 auto;
+        padding: vars.$spacing-m;
+        margin: vars.$spacing-m auto;
     }
 
     &__image {
@@ -69,6 +69,14 @@
         border-radius: vars.$border-radius-m;
         box-shadow: 0 4px 12px rgba(vars.$color-secondary, 0.15);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        @media (max-width: vars.$breakpoint-m) {
+            width: 80%;
+        }
+
+        @media (max-width: vars.$breakpoint-s) {
+            width: 60%;
+        }
 
         &:hover {
             transform: scale(1.02);

@@ -25,8 +25,8 @@ footer {
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: clamp(typo.$font-size-s, calc(typo.$font-size-s + 1.5vmin), typo.$font-size-m);
   padding: vars.$spacing-m;
+  font-size: typo.$footer-text-font-size;
 }
 
 /* Footer styles */
@@ -46,6 +46,6 @@ footer.footer {
 .footer__version {
   position: absolute;
   right: vars.$spacing-m;
-  font-size: clamp(typo.$font-size-s, calc(typo.$font-size-s + 1.5vmin), typo.$font-size-m);;
+  font-size: typo.$version-text-font-size;
   color: vars.$color-secondary;
 } 
