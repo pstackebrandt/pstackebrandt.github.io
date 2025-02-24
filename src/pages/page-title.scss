@@ -1,15 +1,16 @@
-@import '../styles/variables';
+@use '../styles/variables' as vars;
+@use '../styles/base/_typography.scss' as typo;
 
 .container {
-  padding: 1rem;
+  padding: vars.$spacing-m;
   
-  @media (max-width: $breakpoint-md) {
-    padding: 0.75rem;
+  @media (max-width: vars.$breakpoint-m) {
+    padding: vars.$spacing-s;
   }
 } 
 
 .lead {
-  font-size: clamp(1rem, 3vw, 1.25rem);
-  line-height: 1.4;
-  color: $text-primary;
+  font-size: typo.$page-subtitle-font-size;
+  color: vars.$text-primary;
+  font-family: typo.$font-family-text;
 }

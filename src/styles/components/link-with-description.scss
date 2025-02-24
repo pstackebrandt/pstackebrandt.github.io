@@ -11,13 +11,13 @@
     display: flex;
     flex-direction: column;
 
-    gap: $spacing-md;
-    margin-bottom: $spacing-md;
+    gap: $spacing-m;
+    margin-bottom: $spacing-m;
 
     &--double-width {
         grid-column: span 2;
 
-        @media (max-width: $breakpoint-md) {
+        @media (max-width: $breakpoint-m) {
             grid-column: span 1; // Reset to single column on mobile
         }
     }

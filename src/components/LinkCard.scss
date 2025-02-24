@@ -3,13 +3,13 @@
 
 .link-card {
     background: $background-primary;
-    border-radius: 8px;
-    padding: $spacing-md;
+    border-radius: $border-radius-m;
+    padding: $spacing-m;
     box-shadow: 0 2px 8px rgba($text-secondary, 0.3);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
-    gap: $spacing-md;
+    gap: $spacing-m;
 
     &:hover {
         transform: translateY(-4px);

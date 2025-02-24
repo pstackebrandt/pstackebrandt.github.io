@@ -1,7 +1,8 @@
-@import './variables';
+@use './variables' as vars;
+@use './base/_typography.scss' as typo;
 
 .root-layout {
-  background: $background-primary;
+  background: vars.$background-primary;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,18 +25,14 @@ footer {
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: clamp(14px, calc(10px + 1.5vmin), 20px);
-  padding: 0.5rem;
-  
-  @media (max-width: 768px) {
-    min-height: 8vh;
-  }
+  font-size: clamp(typo.$font-size-s, calc(typo.$font-size-s + 1.5vmin), typo.$font-size-m);
+  padding: vars.$spacing-m;
 }
 
 /* Footer styles */
 footer.footer {
   position: relative;
-  padding: 0.5rem;
+  padding: vars.$spacing-m;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +45,7 @@ footer.footer {
 
 .footer__version {
   position: absolute;
-  right: 1rem;
-  font-size: 0.8rem;
-  color: var(--bs-secondary);
+  right: vars.$spacing-m;
+  font-size: clamp(typo.$font-size-s, calc(typo.$font-size-s + 1.5vmin), typo.$font-size-m);;
+  color: vars.$color-secondary;
 } 

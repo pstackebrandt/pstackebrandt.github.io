@@ -1,5 +1,5 @@
-@use '../base/_typography' as *;
-@use '../variables' as *;
+@use '../base/_typography' as typo;
+@use '../variables' as vars;
 
 // Welcome component styles
 .welcome {
@@ -9,28 +9,27 @@
     &__container {
         max-width: 1050px;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 vars.$spacing-l;
     }
 
     &__text {
-        font-size: $body-text-font-size;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
+        font-size: typo.$font-size-m;
+        margin-bottom: vars.$spacing-l;
 
-        @media (max-width: $breakpoint-md) {
-            margin-bottom: $spacing-lg;
+        @media (max-width: vars.$breakpoint-m) {
+            margin-bottom: vars.$spacing-l;
         }
     }
 
     &__titles {
-        color: $color-title;
+        color: vars.$color-title;
     }
 
     &__section-title { // used 
         @extend .welcome__titles;
-        font-size: $section-title-font-size;
-        margin-top: $spacing-xl;
-        margin-bottom: 1.25rem;
+        font-size: typo.$font-size-l;
+        margin-top: vars.$spacing-xl;
+        margin-bottom: vars.$spacing-l;
     }
 
     &__list { // used as container for the cards
@@ -39,7 +38,7 @@
         margin: 0;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
+        gap: vars.$spacing-l;
         
         > li.double-width {
             grid-column: span 2 !important;
@@ -49,12 +48,12 @@
     &__intro {
         display: grid;
         grid-template-columns: 300px 1fr;
-        gap: $spacing-xl;
-        margin-bottom: $spacing-xl;
+        gap: vars.$spacing-l;
+        margin-bottom: vars.$spacing-xl;
 
-        @media (max-width: $breakpoint-md) {
+        @media (max-width: vars.$breakpoint-m) {
             grid-template-columns: 1fr;
-            gap: $spacing-lg;
+            gap: vars.$spacing-l;
         }
     }
 
@@ -67,36 +66,36 @@
     &__image {
         width: 100%;
         height: auto;
-        border-radius: $border-radius-md;
-        box-shadow: 0 4px 12px rgba($text-secondary, 0.15);
+        border-radius: vars.$border-radius-m;
+        box-shadow: 0 4px 12px rgba(vars.$color-secondary, 0.15);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
 
         &:hover {
             transform: scale(1.02);
-            box-shadow: 0 6px 16px rgba($text-secondary, 0.2);
+            box-shadow: 0 6px 16px rgba(vars.$color-secondary, 0.2);
         }
     }
 
     &__text-content {
         display: flex;
         flex-direction: column;
-        gap: $spacing-md;
+        gap: vars.$spacing-m;
     }
 
     // Add container padding adjustments for different screen sizes
-    @media (max-width: $breakpoint-lg) {
+    @media (max-width: vars.$breakpoint-l) {
         &__container {
             padding: 0 40px;
         }
     }
 
-    @media (max-width: $breakpoint-md) {
+    @media (max-width: vars.$breakpoint-m) {
         &__container {
             padding: 0 20px;
         }
     }
 
-    @media (max-width: $breakpoint-sm) {
+    @media (max-width: vars.$breakpoint-s) {
         &__container {
             padding: 0 15px;
         }

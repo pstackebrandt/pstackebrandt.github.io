@@ -1,10 +1,33 @@
-@import './styles/variables';
+@use './styles/variables' as vars;
+@use './styles/base/_typography.scss' as typo;
 
 html {
-  font-size: 16px;
+  font-size: typo.$font-size-m;
   
-  @media (max-width: $breakpoint-md) {
-    font-size: 15px;
+  @media (max-width: vars.$breakpoint-m) {
+    font-size: typo.$font-size-s-p;
   }
-  // ... rest of the file remains the same
+  
+  @media (max-width: vars.$breakpoint-s) {
+    font-size: typo.$font-size-s;
+  }
 } 
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  font-size: 0.9em;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 0.2em 0.4em;
+}

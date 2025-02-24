@@ -7,52 +7,66 @@
 
 // Font Families
 $font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-  "Droid Sans", "Helvetica Neue", sans-serif;
+    "Droid Sans", "Helvetica Neue", sans-serif;
 $font-family-code: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+
+// Semantic Font Families
+$font-family-title: $font-family-base;
+$font-family-subtitle: $font-family-title;
+$font-family-text: $font-family-title;
 
 // Font Sizes
 // --------------------------------------------------------------------------
-$font-size-sm: 0.8rem; // 12.8px
-$font-size-md: 1rem; // 16px
-$font-size-md-p: 1.2rem; // 19.2px
-$font-size-lg-m: 1.6rem; // 22.4px
-$font-size-lg: 1.8rem; // 24px
-$font-size-xl: 2rem; // 32px
-$font-size-xxl: 2.5rem; // 40px
+$font-size-s: 0.8rem;
+$font-size-s-p: 0.9rem;
+$font-size-m: 1rem;
+$font-size-m-p: 1.2rem; 
+$font-size-l-m: 1.6rem;
+$font-size-l: 1.8rem;
+$font-size-xl: 2rem;
+$font-size-xxl: 2.5rem;
+$font-size-3xl: 3rem;
 
-$body-text-font-size: clamp($font-size-sm, 1.8vw, $font-size-md-p);
-$page-title-font-size: clamp($font-size-xl, 2.6vw, $font-size-xxl); // Adjust as needed
-$page-subtitle-font-size: clamp($font-size-xl, 2.4vw, $font-size-xl); // Adjust as needed
-$section-title-font-size: clamp($font-size-xl, 2.2vw, $font-size-xxl); // Adjust as needed
-$article-title-font-size: clamp($font-size-lg-m, 2vw, $font-size-lg); // Adjust as needed
+// Semantic Font Sizes with Responsive Scaling
+$page-title-font-size: clamp($font-size-xl, 2.4vw, $font-size-3xl);
+$page-subtitle-font-size: clamp($font-size-m-p, 1.8vw, $font-size-l);
+$section-title-font-size: clamp($font-size-xl, 2.2vw, $font-size-xxl);
+$article-title-font-size: clamp($font-size-l-m, 2vw, $font-size-l);
+$body-text-font-size: clamp($font-size-m, 1.8vw, $font-size-m-p);
+$footer-text-font-size: clamp($font-size-s, 1.6vw, $font-size-m);
+$version-text-font-size: $footer-text-font-size;
 
 // Global heading styles
 // --------------------------------------------------------------------------
 h1 {
-    font-size: $font-size-xxl;
+    font-family: $font-family-title;
+    font-size: $page-title-font-size;
     color: $color-title;
-    margin-top: $spacing-md;
-    margin-bottom: $spacing-md;
+    margin-top: $spacing-m;
+    margin-bottom: $spacing-m;
 }
 
 h2 {
-    font-size: $font-size-lg;
+    font-family: $font-family-title;
+    font-size: $font-size-l;
     color: $color-title;
-    margin-top: $spacing-md;
-    margin-bottom: $spacing-md;
-    padding: $spacing-md;
+    margin-top: $spacing-m;
+    margin-bottom: $spacing-m;
+    padding: $spacing-m;
     text-align: center;
 }
 
 h3 {
-    font-size: $font-size-md;
+    font-family: $font-family-subtitle;
+    font-size: $font-size-m;
     color: $color-title;
-    margin-top: $spacing-md;
-    margin-bottom: $spacing-sm;
+    margin-top: $spacing-m;
+    margin-bottom: $spacing-s;
 }
 
 h4 {
-    font-size: $font-size-sm;
+    font-family: $font-family-subtitle;
+    font-size: $font-size-s;
     color: $color-subtitle;
     margin-bottom: $spacing-xs;
 }
