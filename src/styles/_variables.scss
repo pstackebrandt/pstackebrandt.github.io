@@ -99,22 +99,13 @@ $border-radius-l: 1rem;
 $header-footer-min-height: 20vh;
 $mobile-header-footer-min-height: 10vh;
 
-/* Sass mixin for responsive design
+/* Responsive design mixins
  *
- * Creates media queries for responsive design based on predefined breakpoints.
- * This mixin simplifies writing media queries by using named breakpoints.
- * 
- * @param $breakpoint - The breakpoint to use ("small", "medium", or "large").
- * @content - The styles to apply within the media query.
- * @example
- *   .my-element {
- *     width: 100%;
- *     
- *     @include below(medium) {
- *       width: 50%;
- *     }
- *   }
+ * A collection of mixins to simplify writing media queries for responsive design.
+ * These mixins use named breakpoints for consistency across the codebase.
  */
+
+// For styles that apply below a breakpoint (mobile-first)
 @mixin below($breakpoint) {
   @if $breakpoint == small {
     @media (max-width: $breakpoint-s) {
@@ -126,6 +117,40 @@ $mobile-header-footer-min-height: 10vh;
     }
   } @else if $breakpoint == large {
     @media (max-width: $breakpoint-l) {
+      @content;
+    }
+  }
+}
+
+// For styles that apply above a breakpoint (desktop-first)
+@mixin above($breakpoint) {
+  @if $breakpoint == small {
+    @media (min-width: #{$breakpoint-s + 1}) {
+      @content;
+    }
+  } @else if $breakpoint == medium {
+    @media (min-width: #{$breakpoint-m + 1}) {
+      @content;
+    }
+  } @else if $breakpoint == large {
+    @media (min-width: #{$breakpoint-l + 1}) {
+      @content;
+    }
+  }
+}
+
+// For styles that apply between two breakpoints
+@mixin between($min, $max) {
+  @if $min == small and $max == medium {
+    @media (min-width: #{$breakpoint-s + 1}) and (max-width: $breakpoint-m) {
+      @content;
+    }
+  } @else if $min == medium and $max == large {
+    @media (min-width: #{$breakpoint-m + 1}) and (max-width: $breakpoint-l) {
+      @content;
+    }
+  } @else if $min == small and $max == large {
+    @media (min-width: #{$breakpoint-s + 1}) and (max-width: $breakpoint-l) {
       @content;
     }
   }
