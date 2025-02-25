@@ -100,14 +100,22 @@ $header-footer-min-height: 20vh;
 $mobile-header-footer-min-height: 10vh;
 
 /* Sass mixin for responsive design
-
-* TODO Rethink this description.
-
-* @param $breakpoint - The breakpoint to use.
-* @content - The content to display.
-* @return The content to display.
-*/
-@mixin responsive($breakpoint) {
+ *
+ * Creates media queries for responsive design based on predefined breakpoints.
+ * This mixin simplifies writing media queries by using named breakpoints.
+ * 
+ * @param $breakpoint - The breakpoint to use ("small", "medium", or "large").
+ * @content - The styles to apply within the media query.
+ * @example
+ *   .my-element {
+ *     width: 100%;
+ *     
+ *     @include below(medium) {
+ *       width: 50%;
+ *     }
+ *   }
+ */
+@mixin below($breakpoint) {
   @if $breakpoint == small {
     @media (max-width: $breakpoint-s) {
       @content;

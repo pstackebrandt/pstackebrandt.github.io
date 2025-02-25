@@ -39,17 +39,18 @@ const LinkCard = ({ href, text, description, className = 'link-card--default' })
     }, []);
 
     const needsTruncation = description.length > maxChars;
-    
+
+    const lastSpaceIndex = description.lastIndexOf(' ', maxChars);
     const truncatedText = needsTruncation && !isExpanded
-        ? description.slice(0, description.lastIndexOf(' ', maxChars)) + '...'
+        ? description.slice(0, lastSpaceIndex > 0 ? lastSpaceIndex : maxChars) + '...'
         : description;
 
     return (
         <div className={`link-card ${className || ''}`}>
-            <a 
-                href={href} 
+            <a
+                href={href}
                 className="link-card__link"
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
             >
                 {text}
@@ -57,7 +58,7 @@ const LinkCard = ({ href, text, description, className = 'link-card--default' })
             <div className="link-card__description">
                 {renderTextWithLineBreaks(truncatedText)}
                 {needsTruncation && (
-                    <button 
+                    <button
                         onClick={() => setIsExpanded(!isExpanded)}
                         className="link-card__toggle"
                         aria-expanded={isExpanded}
