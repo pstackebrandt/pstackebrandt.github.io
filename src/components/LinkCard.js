@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { getContentLength } from './LinkCard/config';
 import './LinkCard.scss';
 
-/** Helper that allows to render text with line breaks ('Rendering' in React is returning JSX elements.)
+/** Helper that allows to render text with line breaks
  * @param {string} text - The text to render including line break characters
  * @returns {React.ReactNode[]} Array of React elements including line break elements
  */
@@ -25,6 +26,24 @@ function renderTextWithLineBreaks(text) {
  * @returns {JSX.Element} A div containing a link and description
  */
 const LinkCard = ({ href, text, description, className = 'link-card--default' }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const [maxChars, setMaxChars] = useState(getContentLength(window.innerWidth));
+
+    useEffect(() => {
+        const updateMaxChars = () => {
+            setMaxChars(getContentLength(window.innerWidth));
+        };
+
+        window.addEventListener('resize', updateMaxChars);
+        return () => window.removeEventListener('resize', updateMaxChars);
+    }, []);
+
+    const needsTruncation = description.length > maxChars;
+    
+    const truncatedText = needsTruncation && !isExpanded
+        ? description.slice(0, description.lastIndexOf(' ', maxChars)) + '...'
+        : description;
+
     return (
         <div className={`link-card ${className || ''}`}>
             <a 
@@ -35,9 +54,19 @@ const LinkCard = ({ href, text, description, className = 'link-card--default' })
             >
                 {text}
             </a>
-            <span className="link-card__description">
-                {renderTextWithLineBreaks(description)}
-            </span>
+            <div className="link-card__description">
+                {renderTextWithLineBreaks(truncatedText)}
+                {needsTruncation && (
+                    <button 
+                        onClick={() => setIsExpanded(!isExpanded)}
+                        className="link-card__toggle"
+                        aria-expanded={isExpanded}
+                        aria-controls="description-text"
+                    >
+                        {isExpanded ? 'Show Less' : 'Show More'}
+                    </button>
+                )}
+            </div>
         </div>
     );
 };

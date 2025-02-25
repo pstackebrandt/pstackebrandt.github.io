@@ -27,8 +27,33 @@
     }
 
     &__description {
+        position: relative;
+        transition: max-height 0.3s ease-out;
         font-size: $body-text-font-size;
         color: $text-primary;
         white-space: pre-line;
+    }
+
+    &__toggle {
+        display: inline-block;
+        background: none;
+        border: none;
+        color: $color-primary;
+        padding: $spacing-s $spacing-m;
+        margin-top: $spacing-s;
+        cursor: pointer;
+        font-size: $font-size-s-p;
+        transition: color 0.2s ease;
+        
+        &:hover {
+            color: $link-hover-color;
+        }
+
+        // Make the button more touch-friendly on mobile
+        @media (max-width: $breakpoint-m) {
+            padding: $spacing-m;
+            min-height: 44px;
+            min-width: 44px;
+        }
     }
 } 

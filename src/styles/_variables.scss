@@ -76,9 +76,9 @@ $background-primary: $color-white;
 $background-secondary: $color-gray-100;
 
 // Breakpoints
-$breakpoint-s: 480px;
-$breakpoint-m: 768px;
-$breakpoint-l: 1024px;
+$breakpoint-s: 480px; // BREAKPOINTS.SMALL, good for mobile
+$breakpoint-m: 768px; // BREAKPOINTS.MEDIUM, good for middle screens or windows
+$breakpoint-l: 1024px; // BREAKPOINTS.LARGE, good for full screen of bigger monitors
 
 // Spacing
 // --------------------------------------------------------------------------
@@ -86,7 +86,7 @@ $breakpoint-l: 1024px;
 $spacing-xs: 0.25rem;
 $spacing-s: 0.3rem;
 $spacing-m: 0.5rem;
-$spacing-l: 1rem; 
+$spacing-l: 1rem;
 $spacing-xl: 2rem;
 $spacing-xxl: 3rem;
 // Borders
@@ -98,3 +98,27 @@ $border-radius-l: 1rem;
 // Layout
 $header-footer-min-height: 20vh;
 $mobile-header-footer-min-height: 10vh;
+
+/* Sass mixin for responsive design
+
+* TODO Rethink this description.
+
+* @param $breakpoint - The breakpoint to use.
+* @content - The content to display.
+* @return The content to display.
+*/
+@mixin responsive($breakpoint) {
+  @if $breakpoint == small {
+    @media (max-width: $breakpoint-s) {
+      @content;
+    }
+  } @else if $breakpoint == medium {
+    @media (max-width: $breakpoint-m) {
+      @content;
+    }
+  } @else if $breakpoint == large {
+    @media (max-width: $breakpoint-l) {
+      @content;
+    }
+  }
+}
