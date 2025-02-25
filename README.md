@@ -2,7 +2,7 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/pstackebrandt/pstackebrandt.github.io)
 ![GitHub issues](https://img.shields.io/github/issues/pstackebrandt/pstackebrandt.github.io)
-![GitHub version](https://img.shields.io/badge/version-1.10.0-blue)
+![GitHub version](https://img.shields.io/badge/version-1.10.1-blue)
 
 - [pstackebrandt.github.io](#pstackebrandtgithubio)
   - [Purpose of app](#purpose-of-app)
