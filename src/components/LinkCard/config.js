@@ -27,4 +27,4 @@ export const getContentLength = (width) => {
         return CONTENT_LENGTHS.MEDIUM;
     }
     return CONTENT_LENGTHS.LARGE;
-}; 
+};
