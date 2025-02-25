@@ -1,7 +1,7 @@
 {
   "name": "pstackebrandt.github.io",
   "_versionNote": "Do not modify version manually. Use 'npm version' command instead to ensure version badge is updated",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "private": true,
   "homepage": "http://pstackebrandt.github.io/",
   "dependencies": {
