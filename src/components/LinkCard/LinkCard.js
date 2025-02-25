@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { getContentLength } from './LinkCard/config';
+import { getContentLength } from './config';
 import './LinkCard.scss';
 
 /** Helper that allows to render text with line breaks
@@ -78,4 +78,4 @@ LinkCard.propTypes = {
     className: PropTypes.string
 };
 
-export default LinkCard; 
+export default LinkCard;

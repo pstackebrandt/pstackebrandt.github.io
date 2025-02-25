@@ -6,26 +6,25 @@ import { BREAKPOINTS } from '../../config/breakpoints';
 */
 
 /*
-    Count of always visible characters of the content of a link card.
+    Maximum number of characters that are always visible in a link card's content.
  */
 export const CONTENT_LENGTHS = {
-    MOBILE: 300,
-    TABLET: 500,
-    DESKTOP: 800
+    SMALL: 300,    // for small windows and mobile devices  
+    MEDIUM: 500,   // for medium windows and tablets
+    LARGE: 800     // for large windows and desktops
 };
-// TODO Rename the keys to be more accurate. Small, Middle, Large
 
 /**
  * Get the maximum number of characters to display in the 
  * description of a link card based on the width of the window.
- * @param {*} width - The width of the window.
- * @returns The maximum number of characters to display in the description of a link card.
+ * @param {number} width - The width of the window.
+ * @returns {number} The maximum number of characters to display in the description of a link card.
  */
 export const getContentLength = (width) => {
     if (width <= BREAKPOINTS.SMALL) {
-        return CONTENT_LENGTHS.MOBILE;
+        return CONTENT_LENGTHS.SMALL;
     } else if (width <= BREAKPOINTS.MEDIUM) {
-        return CONTENT_LENGTHS.TABLET;
+        return CONTENT_LENGTHS.MEDIUM;
     }
-    return CONTENT_LENGTHS.DESKTOP;
+    return CONTENT_LENGTHS.LARGE;
 }; 
