@@ -3,6 +3,7 @@ import PageTitle from '../pages/page-title';
 import '../styles/components/welcome.scss';
 import LinkCard from '../components/LinkCard';
 import LinkWithDescription from '../components/LinkWithDescription';
+import ImageWithContent from '../components/ImageWithContent';
 import portraitImageSmallWebp from '../images/peter/peter-stackebrandt-portrait-small.webp';
 import portraitImageMediumWebp from '../images/peter/peter-stackebrandt-portrait-medium.webp';
 import portraitImageLargeWebp from '../images/peter/peter-stackebrandt-portrait-large.webp';
@@ -12,59 +13,41 @@ import portraitImageLarge from '../images/peter/peter-stackebrandt-portrait-larg
 
 // Main content of the page
 export default function Welcome() {
+    const portraitSources = {
+        small: portraitImageSmall,
+        medium: portraitImageMedium,
+        large: portraitImageLarge,
+        smallWebp: portraitImageSmallWebp,
+        mediumWebp: portraitImageMediumWebp,
+        largeWebp: portraitImageLargeWebp
+    };
+
     return (
         <div className="welcome">
             <div className="welcome__container">
                 <PageTitle />
 
-                <div className="welcome__intro">
-                    <div className="welcome__image-container">
-                        <picture>
-                            <source
-                                type="image/webp"
-                                srcSet={`${portraitImageSmallWebp} 200w,
-                                        ${portraitImageMediumWebp} 400w,
-                                        ${portraitImageLargeWebp} 800w`}
-                                sizes="(max-width: 768px) 200px,
-                                        (max-width: 1024px) 250px,
-                                       300px"
-                            />
-                            <source
-                                type="image/jpeg"
-                                srcSet={`${portraitImageSmall} 200w,
-                                        ${portraitImageMedium} 400w,
-                                        ${portraitImageLarge} 800w`}
-                                sizes="(max-width: 768px) 200px,
-                                        (max-width: 1024px) 250px,
-                                       300px"
-                            />
-                            <img
-                                src={portraitImageSmall}
-                                alt="Peter Stackebrandt"
-                                className="welcome__image"
-                                width="300"
-                                height="450"
-                                fetchpriority="high"
-                            />
-                        </picture>
-                    </div>
+                <ImageWithContent
+                    sources={portraitSources}
+                    imageAlt="Peter Stackebrandt"
+                    imagePosition="left"
+                    imageWidth={300}
+                    className="welcome__intro"
+                >
+                    <p className="welcome__text">
+                        Ich wohne in Feucht bei Nürnberg und habe langjährige Erfahrung in der Entwicklung von Apps und Services mit .NET. Neben meiner Leidenschaft für Webentwicklung interessiere ich mich besonders für den Einsatz von KI in der Softwareentwicklung.
+                    </p>
 
-                    <div className="welcome__text-content">
-                        <p className="welcome__text">
-                            Ich wohne in Feucht bei Nürnberg und habe langjährige Erfahrung in der Entwicklung von Apps und Services mit .NET. Neben meiner Leidenschaft für Webentwicklung interessiere ich mich besonders für den Einsatz von KI in der Softwareentwicklung.
-                        </p>
+                    <p className="welcome__text">
+                        Diese Webseite ist eine zentrale Anlaufstelle, um mehr über meine Fertigkeiten und meine Projekte zu erfahren. Derzeit arbeite ich daran, hier öffentlich zugängliche Links zu meinen Projekten zu sammeln und zu präsentieren.
+                    </p>
 
-                        <p className="welcome__text">
-                            Diese Webseite ist eine zentrale Anlaufstelle, um mehr über meine Fertigkeiten und meine Projekte zu erfahren. Derzeit arbeite ich daran, hier öffentlich zugängliche Links zu meinen Projekten zu sammeln und zu präsentieren.
-                        </p>
-
-                        <LinkWithDescription
-                            url="https://www.linkedin.com/in/peter-stackebrandt"
-                            linkText="Mein LinkedIn-Profil"
-                            description={`Ausführliche Informationen zu meinem beruflichen Profil`}
-                        />
-                    </div>
-                </div>
+                    <LinkWithDescription
+                        url="https://www.linkedin.com/in/peter-stackebrandt"
+                        linkText="Mein LinkedIn-Profil"
+                        description={`Ausführliche Informationen zu meinem beruflichen Profil`}
+                    />
+                </ImageWithContent>
 
                 <p className="welcome__section-title">Projekte</p>
                 <ul className="welcome__list">
