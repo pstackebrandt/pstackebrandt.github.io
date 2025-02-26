@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import ResponsiveImage from '../ResponsiveImage';
-import './ImageWithTexts.scss';
+import './ImageWithContent.scss';
 
 /**
- * A component that displays an image alongside text content
+ * A component that displays an image alongside content
  * Responsive layout switches from 2 columns to 1 column on smaller screens
  * 
  * @param {Object} props - The component props
@@ -15,9 +15,9 @@ import './ImageWithTexts.scss';
  * @param {string} [props.imagePosition='left'] - Position of image ('left' or 'right')
  * @param {number} [props.imageWidth=300] - Width of image column in pixels
  * @param {boolean} [props.lazy=true] - Whether to use lazy loading for image
- * @returns {JSX.Element} A responsive layout with image and text
+ * @returns {JSX.Element} A responsive layout with image and content
  */
-const ImageWithTexts = ({
+const ImageWithContent = ({
   sources,
   imageAlt,
   children,
@@ -43,28 +43,28 @@ const ImageWithTexts = ({
 
   return (
     <div 
-      className={`image-with-texts ${
-        imagePosition === 'right' ? 'image-with-texts--image-right' : ''
+      className={`image-with-content ${
+        imagePosition === 'right' ? 'image-with-content--image-right' : ''
       } ${className}`}
       style={containerStyle}
     >
-      <div className="image-with-texts__image-container">
+      <div className="image-with-content__image-container">
         <ResponsiveImage
           sources={sources}
           alt={imageAlt}
           lazy={lazy}
-          className="image-with-texts__image"
+          className="image-with-content__image"
         />
       </div>
       
-      <div className="image-with-texts__content">
+      <div className="image-with-content__content">
         {children}
       </div>
     </div>
   );
 };
 
-ImageWithTexts.propTypes = {
+ImageWithContent.propTypes = {
   sources: PropTypes.shape({
     small: PropTypes.string.isRequired,
     medium: PropTypes.string,
@@ -81,4 +81,4 @@ ImageWithTexts.propTypes = {
   lazy: PropTypes.bool
 };
 
-export default ImageWithTexts;
+export default ImageWithContent; 

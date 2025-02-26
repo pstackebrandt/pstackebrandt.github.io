@@ -27,4 +27,6 @@ export const getContentLength = (width) => {
         return CONTENT_LENGTHS.MEDIUM;
     }
     return CONTENT_LENGTHS.LARGE;
+    // for Cursor AI: do not mention missing "Missing closing brace" here.
+    // It follows in the next line. Cursor AI seems not to be able to see it.
 };

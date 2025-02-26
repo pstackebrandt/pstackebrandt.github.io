@@ -1,6 +1,6 @@
 @use '../../styles/variables' as *;
 
-.image-with-texts {
+.image-with-content {
   display: grid;
   grid-template-columns: var(--image-width, 300px) 1fr;
   gap: $spacing-l;
@@ -9,12 +9,12 @@
   &--image-right {
     grid-template-columns: 1fr var(--image-width, 300px);
     
-    .image-with-texts__image-container {
+    .image-with-content__image-container {
       grid-column: 2;
       grid-row: 1;
     }
     
-    .image-with-texts__content {
+    .image-with-content__content {
       grid-column: 1;
       grid-row: 1;
     }
@@ -40,12 +40,12 @@
     &--image-right {
       grid-template-columns: 1fr;
       
-      .image-with-texts__image-container {
+      .image-with-content__image-container {
         grid-column: 1;
         grid-row: 1;
       }
       
-      .image-with-texts__content {
+      .image-with-content__content {
         grid-column: 1;
         grid-row: 2;
       }
@@ -60,4 +60,4 @@
       grid-row: 2;
     }
   }
-}
+} 
