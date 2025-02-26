@@ -1,0 +1,63 @@
+@use '../../styles/variables' as *;
+
+.image-with-texts {
+  display: grid;
+  grid-template-columns: var(--image-width, 300px) 1fr;
+  gap: $spacing-l;
+  margin-bottom: $spacing-l;
+  
+  &--image-right {
+    grid-template-columns: 1fr var(--image-width, 300px);
+    
+    .image-with-texts__image-container {
+      grid-column: 2;
+      grid-row: 1;
+    }
+    
+    .image-with-texts__content {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+  
+  &__image-container {
+    width: 100%;
+    max-width: var(--image-width, 300px);
+    padding: $spacing-s;
+    margin: 0 auto;
+  }
+  
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-m;
+  }
+  
+  @media (max-width: $breakpoint-m) {
+    grid-template-columns: 1fr;
+    gap: $spacing-m;
+    
+    &--image-right {
+      grid-template-columns: 1fr;
+      
+      .image-with-texts__image-container {
+        grid-column: 1;
+        grid-row: 1;
+      }
+      
+      .image-with-texts__content {
+        grid-column: 1;
+        grid-row: 2;
+      }
+    }
+    
+    &__image-container {
+      max-width: 80%;
+      grid-row: 1;
+    }
+    
+    &__content {
+      grid-row: 2;
+    }
+  }
+}
