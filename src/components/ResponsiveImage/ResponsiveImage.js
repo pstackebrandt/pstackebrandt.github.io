@@ -15,13 +15,15 @@ import './ResponsiveImage.scss';
  * @param {string} props.alt - Alt text for the image
  * @param {string} [props.className] - Additional CSS class names
  * @param {boolean} [props.lazy=true] - Whether to use lazy loading
+ * @param {Object} [props.otherProps] - Additional props (...props) passed to picture element
  * @returns {JSX.Element} A responsive image component
  */
 const ResponsiveImage = ({ 
   sources, 
   alt, 
   className = '',
-  lazy = true
+  lazy = true,
+  ...otherProps
 }) => {
   const {
     small, 
@@ -39,7 +41,7 @@ const ResponsiveImage = ({
   }
 
   return (
-    <picture className={`responsive-image ${className}`}>
+    <picture className={`responsive-image ${className}`} {...otherProps}>
       {/* WebP sources if available */}
       {largeWebp && <source 
         srcSet={largeWebp} 
@@ -90,7 +92,11 @@ ResponsiveImage.propTypes = {
   }).isRequired,
   alt: PropTypes.string.isRequired,
   className: PropTypes.string,
-  lazy: PropTypes.bool
+  lazy: PropTypes.bool,
+  // Define that we accept any additional props with any values
+  // This documents the spread props pattern used in the component
+  // eslint-disable-next-line react/forbid-prop-types
+  otherProps: PropTypes.object
 };
 
 export default ResponsiveImage;

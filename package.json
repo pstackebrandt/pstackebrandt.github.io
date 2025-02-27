@@ -6,8 +6,6 @@
   "homepage": "http://pstackebrandt.github.io/",
   "dependencies": {
     "@svgr/webpack": "^8.1.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "14.3.1",
     "@testing-library/user-event": "^14.5.2",
     "bootstrap": "^5.3.3",
     "css-select": "^5.1.0",
@@ -53,7 +51,11 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
     "gh-pages": "^6.3.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.5.1",
     "markdownlint-cli": "^0.44.0",
     "sass": "^1.83.1"
   },
