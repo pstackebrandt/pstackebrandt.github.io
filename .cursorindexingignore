@@ -1,0 +1,51 @@
+# Cursor indexing ignore file - controls what's excluded from code indexing
+# More targeted than .cursorignore, focusing on performance improvement
+
+# Dependencies - very large and not typically needed for indexing
+/node_modules
+/.pnp
+.pnp.js
+
+# Build output
+/build
+/dist
+/out
+
+# Generated files
+*.generated.*
+*.min.js
+*.min.css
+*.bundle.js
+
+# Non-project code
+/public/static
+/public/assets
+
+# Large data files
+*.json
+!package.json
+!tsconfig.json
+!.eslintrc.json
+!.prettierrc.json
+!manifest.json
+!*.config.json
+!jest.config.json
+
+# Test fixtures and mocks
+__mocks__/
+__fixtures__/
+/test/fixtures
+/cypress/fixtures
+
+# Documentation
+/docs
+*.md
+!README.md
+
+# Large lock files that slow down indexing
+package-lock.json
+yarn.lock
+
+# Other large files
+*.svg
+*.map 

@@ -1,0 +1,69 @@
+# Cursor ignore file - similar to .gitignore but for Cursor IDE
+
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Build artifacts
+/build
+/dist
+/.next
+/out
+
+# Testing
+/coverage
+/.nyc_output
+/cypress/videos
+/cypress/screenshots
+
+# Environment and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+/.env*
+*.pem
+
+# Logs
+/logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache and temporary files
+.cache
+.temp
+.tmp
+.eslintcache
+.stylelintcache
+.DS_Store
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# Large binary files
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+*.pdf
+*.mp4
+*.mov
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.woff
+*.woff2
+*.ttf
+*.eot
+
+# Package files - often large and not needed for context
+package-lock.json
+yarn.lock 
