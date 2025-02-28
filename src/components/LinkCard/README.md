@@ -36,6 +36,7 @@ function MyComponent() {
 | `text`        | string | Yes      | -                    | The text content/title of the link                   |
 | `description` | string | Yes      | -                    | A description of the link that appears below it      |
 | `className`   | string | No       | 'link-card--default' | Additional CSS class names to apply to the component |
+| `...props`    | -      | No       | -                    | Additional props are passed to the root div element  |
 
 ## Responsive Behavior
 
@@ -63,7 +64,8 @@ The component uses the `LinkCard.scss` file for styling. You can customize the a
 
 ## Internal Helpers
 
-The component uses a `renderTextWithLineBreaks` utility function to properly format text with line breaks, converting newline characters into React's `<br />` elements.
+The component uses a `renderTextWithLineBreaks` utility function to properly format text with line breaks,
+converting newline characters into React's `<br />` elements.
 
 ## Accessibility
 
@@ -73,6 +75,38 @@ The component follows accessibility best practices:
 - Toggle button has `aria-controls` attribute
 - Interactive elements are keyboard navigable
 - Sufficient color contrast for text elements
+
+## Testing
+
+The component includes specific data attributes to facilitate testing:
+
+- `data-testid="link-card-description"` on the description container
+
+When testing the component, you can:
+
+- Pass your own test IDs through props to the root element
+- Use the built-in data-testid for targeting the description container
+- Test the truncation and expansion behavior using the show more/less functionality
+
+Example test for checking description content:
+
+```jsx
+import { render, screen } from '@testing-library/react';
+import LinkCard from './LinkCard';
+
+it('displays the description text', () => {
+  render(
+    <LinkCard
+      href="https://example.com"
+      text="Example Link"
+      description="Description text"
+    />
+  );
+  
+  const descriptionElement = screen.getByTestId('link-card-description');
+  expect(descriptionElement).toHaveTextContent('Description text');
+});
+```
 
 ### Custom Styling Example
 

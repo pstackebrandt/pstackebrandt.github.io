@@ -17,15 +17,24 @@ function renderTextWithLineBreaks(text) {
 }
 
 /**
- * A component that displays a link with an associated description
- * @param {Object} props - The component props
- * @param {string} props.href - The URL that the link points to
- * @param {string} props.text - The text content of the link
- * @param {string} props.description - A description of the link that appears below it
- * @param {string} [props.className='link-card--default'] - Additional CSS class names to apply to the component
- * @returns {JSX.Element} A div containing a link and description
+ * LinkCard component displays a link with a description that can be expanded/collapsed.
+ * 
+ * Features:
+ * - Renders a link with customizable text
+ * - Displays a description that can be truncated based on screen width
+ * - Provides Show More/Show Less toggle for longer descriptions
+ * - Handles line breaks in descriptions
+ * - Responsive truncation based on viewport size
+ * 
+ * @param {Object} props - Component props
+ * @param {string} props.href - URL for the link
+ * @param {string} props.text - Link text to display
+ * @param {string} props.description - Description text (can contain line breaks with \n)
+ * @param {string} [props.className='link-card--default'] - Optional additional CSS class
+ * @param {string} [props.variant='default'] - Visual variant of the card ('default', 'compact', etc.)
+ * @returns {JSX.Element} Rendered LinkCard component
  */
-const LinkCard = ({ href, text, description, className = 'link-card--default' }) => {
+const LinkCard = ({ href, text, description, className = 'link-card--default', ...props }) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const [maxChars, setMaxChars] = useState(getContentLength(window.innerWidth));
 
@@ -46,7 +55,7 @@ const LinkCard = ({ href, text, description, className = 'link-card--default' })
         : description;
 
     return (
-        <div className={`link-card ${className || ''}`}>
+        <div className={`link-card ${className || ''}`} {...props}>
             <a
                 href={href}
                 className="link-card__link"
@@ -55,7 +64,7 @@ const LinkCard = ({ href, text, description, className = 'link-card--default' })
             >
                 {text}
             </a>
-            <div className="link-card__description">
+            <div className="link-card__description" data-testid="link-card-description">
                 {renderTextWithLineBreaks(truncatedText)}
                 {needsTruncation && (
                     <button
