@@ -10,17 +10,14 @@ import {
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/app.scss';
 
-
 //Layouts
-import RootLayout from "../layouts/RootLayout";
 import ImpressLayout from "../layouts/ImpressLayout";
-
+import RootLayout from "../layouts/RootLayout";
 // Pages
-import Impress from '../pages/Impress';
-import Welcome from "../pages/Welcome";
-
 import Error from "../pages/errors/Error";
+import Impress from '../pages/Impress';
 import NotFound from "../pages/NotFound";
+import Welcome from "../pages/Welcome";
 
 /*
 * Welcome == Hauptseite
