@@ -38,9 +38,10 @@ __fixtures__/
 /cypress/fixtures
 
 # Documentation
+#   Currently most of my md files contain useful information for ai.
 /docs
-*.md
-!README.md
+!docs/**/*.md
+README_by_create_react.md
 
 # Large lock files that slow down indexing
 package-lock.json
