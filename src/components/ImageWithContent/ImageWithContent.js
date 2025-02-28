@@ -43,12 +43,13 @@ const ImageWithContent = ({
 
   return (
     <div 
+      data-testid="image-with-content"
       className={`image-with-content ${
         imagePosition === 'right' ? 'image-with-content--image-right' : ''
       } ${className}`}
       style={containerStyle}
     >
-      <div className="image-with-content__image-container">
+      <div className="image-with-content__image-container" data-testid="image-container">
         <ResponsiveImage
           sources={sources}
           alt={imageAlt}
@@ -57,7 +58,7 @@ const ImageWithContent = ({
         />
       </div>
       
-      <div className="image-with-content__content">
+      <div className="image-with-content__content" data-testid="content-container">
         {children}
       </div>
     </div>
