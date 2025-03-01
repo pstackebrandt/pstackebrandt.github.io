@@ -1,0 +1,44 @@
+---
+description: Empty Lines Between Import Groups
+globs: "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"
+alwaysApply: true
+---
+When organizing imports in JavaScript/TypeScript files, maintain at least one empty line between different import groups to follow the eslint import/order rule.
+
+Import groups are typically arranged in this order:
+1. Built-in Node.js modules
+2. External npm packages/modules
+3. Internal project imports (components, utils, etc.)
+4. Stylesheet imports (CSS, SCSS, etc.)
+5. Asset imports (images, fonts, etc.)
+
+Example of proper import grouping:
+
+```javascript
+// Built-in modules
+import path from 'path';
+import fs from 'fs';
+
+// External packages
+import React, { useState } from 'react';
+import classnames from 'classnames';
+
+// Internal project imports
+import Button from '../components/Button';
+import { formatDate } from '../utils/date';
+
+// Stylesheets
+import '../styles/components/app.scss';
+
+// Assets
+import logo from '../assets/logo.svg';
+```
+
+This pattern:
+- Improves code readability
+- Makes import sections visually distinct
+- Complies with eslint import/order rule
+- Helps maintain consistent code organization
+
+Benefits: Improves readability, makes code organization consistent, and satisfies linting requirements.
+
