@@ -3,6 +3,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/components/link-with-description.scss';
 
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // This makes the scroll smooth
+  });
+};
+
 /**
  * A component that displays a link with an associated description
  * @param {Object} props - The component props
@@ -15,7 +22,10 @@ import '../styles/components/link-with-description.scss';
 const LinkWithDescription = ({ url, linkText, description, isInternal = false, className = '' }) => (
   <div className={`link-with-description ${className}`}>
     {isInternal ? (
-      <Link to={url} className="link-with-description__link">
+      <Link 
+        to={url} 
+        className="link-with-description__link"
+        onClick={scrollToTop}>
         {linkText}
       </Link>
     ) : (
