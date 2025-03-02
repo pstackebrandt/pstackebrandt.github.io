@@ -1,63 +1,110 @@
-@use '../../styles/variables' as *;
+@use "../../styles/variables" as vars;
+
+// Component dimensions
+// Default width for the image column that can be overridden via CSS custom properties
+$image-default-width: 300px;
 
 .image-with-content {
   display: grid;
-  grid-template-columns: var(--image-width, 300px) 1fr;
-  gap: $spacing-l;
-  margin-bottom: $spacing-l;
-  
+  // Two-column layout with fixed width for image and flexible width for content
+  // Uses CSS custom property (--image-width) with SCSS variable fallback for configuration flexibility
+  grid-template-columns: var(--image-width, $image-default-width) 1fr;
+  gap: vars.$spacing-l;
+  margin-bottom: vars.$spacing-l;
+
+  // Modifier class that reverses the layout to show image on the right side
+  // This is currently unused and not tested. (TODO test)
   &--image-right {
-    grid-template-columns: 1fr var(--image-width, 300px);
-    
+    // Reversed column order - content first, then image
+    grid-template-columns: 1fr var(--image-width, $image-default-width);
+
+    // Position the image in the second column
     .image-with-content__image-container {
       grid-column: 2;
       grid-row: 1;
     }
-    
+
+    // Position the content in the first column
     .image-with-content__content {
       grid-column: 1;
       grid-row: 1;
     }
   }
-  
+
+  // Container for the image with size constraints
   &__image-container {
     width: 100%;
-    max-width: var(--image-width, 300px);
-    padding: $spacing-s;
+    max-width: var(--image-width, $image-default-width);
+    padding: vars.$spacing-s;
     margin: 0 auto;
   }
-  
+
+  // Container for the content with vertical arrangement
   &__content {
     display: flex;
     flex-direction: column;
-    gap: $spacing-m;
+    gap: vars.$spacing-m;
   }
-  
-  @media (max-width: $breakpoint-m) {
+
+  // Medium screen responsiveness (tablets, small laptops)
+  // Changes from two-column to one-column layout
+  @include vars.below("medium") {
+    // Switch to single column layout
     grid-template-columns: 1fr;
-    gap: $spacing-m;
-    
+    gap: vars.$spacing-m;
+
+    // Special handling for right-image variant on medium screens
     &--image-right {
       grid-template-columns: 1fr;
-      
+
+      // Reset the image container position for single column layout
       .image-with-content__image-container {
         grid-column: 1;
         grid-row: 1;
+        // Use the mobile max width if specified, otherwise remove constraints
+        max-width: var(--mobile-max-width, none);
+        margin: 0 auto;
       }
-      
+
+      // Ensure responsive image scaling
+      .responsive-image__img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      // Position content below the image in the vertical layout
       .image-with-content__content {
         grid-column: 1;
         grid-row: 2;
       }
     }
-    
+
+    // Standard image container styles for medium screens
+    // Reduces width to 80% to prevent images from being too large
     &__image-container {
       max-width: 80%;
       grid-row: 1;
     }
-    
+
+    // Position content below the image in the vertical layout
     &__content {
       grid-row: 2;
     }
   }
-} 
+
+  // Small screen responsiveness (mobile phones)
+  @include vars.below("small") {
+    // Adjust image container for small screens
+    .image-with-content__image-container {
+      // Use the mobile max width if specified, otherwise remove constraints
+      max-width: var(--mobile-max-width, none);
+      margin: 0 auto;
+    }
+
+    // Ensure proper image scaling for small screens
+    .responsive-image__img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

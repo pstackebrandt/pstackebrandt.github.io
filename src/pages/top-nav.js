@@ -10,7 +10,11 @@ function TopNav() {
       </Nav.Item>
       
       <Nav.Item>
-        <Nav.Link href="impress">Impressum</Nav.Link>
+        <Nav.Link href="/projects">Projekte</Nav.Link>
+      </Nav.Item>
+      
+      <Nav.Item>
+        <Nav.Link href="/impress">Impressum</Nav.Link>
       </Nav.Item>
     </Nav>
   );

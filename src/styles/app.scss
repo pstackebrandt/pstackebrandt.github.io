@@ -1,5 +1,5 @@
-@use './variables' as vars;
-@use './base/_typography.scss' as typo;
+@use "./variables" as vars;
+@use "./base/_typography.scss" as typo;
 
 .root-layout {
   background: vars.$background-primary;
@@ -38,14 +38,24 @@ footer.footer {
   align-items: center;
 }
 
-.footer__nav {
-  text-align: center;
-  width: 100%;
-}
-
 .footer__version {
   position: absolute;
   right: vars.$spacing-m;
   font-size: typo.$version-text-font-size;
   color: vars.$color-secondary;
-} 
+}
+
+/* Responsive footer styles for small screens */
+@include vars.below("small") {
+  footer.footer {
+    flex-direction: column;
+    gap: vars.$spacing-m;
+  }
+
+  .footer__version {
+    position: relative;
+    right: auto;
+    margin-top: vars.$spacing-s;
+    text-align: center;
+  }
+}

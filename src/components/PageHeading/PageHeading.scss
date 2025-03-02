@@ -1,0 +1,27 @@
+@use '../../styles/variables' as vars;
+@use '../../styles/base/_typography.scss' as typo;
+
+.page-heading {
+  // Main wrapper for the page heading component
+  
+  &__container {
+    margin: 0 auto;
+    padding: vars.$spacing-m;
+    
+    @include vars.below("medium") {
+      padding: vars.$spacing-s;
+    }
+  }
+  
+  &__title {
+    @extend h1;
+    margin-top: var(--title-margin-top, 0);
+    margin-bottom: var(--title-margin-bottom, vars.$spacing-s);
+  }
+  
+  &__subtitle {
+    @extend .subtitle;
+    margin-top: var(--subtitle-margin-top, 0);
+    margin-bottom: var(--subtitle-margin-bottom, vars.$spacing-m);
+  }
+} 

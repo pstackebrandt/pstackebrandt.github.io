@@ -43,47 +43,7 @@
             grid-column: span 2 !important;
         }
     }
-
-    &__intro {
-        display: grid;
-        grid-template-columns: 300px 1fr;
-        gap: vars.$spacing-l;
-        margin-bottom: vars.$spacing-xl;
-
-        @media (max-width: vars.$breakpoint-m) {
-            grid-template-columns: 1fr;
-            gap: vars.$spacing-l;
-        }
-    }
-
-    &__image-container {
-        width: 100%;
-        max-width: 300px;
-        padding: vars.$spacing-m;
-        margin: vars.$spacing-m auto;
-    }
-
-    &__image {
-        width: 100%;
-        height: auto;
-        border-radius: vars.$border-radius-m;
-        box-shadow: 0 4px 12px rgba(vars.$color-secondary, 0.15);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-        @media (max-width: vars.$breakpoint-m) {
-            width: 80%;
-        }
-
-        @media (max-width: vars.$breakpoint-s) {
-            width: 60%;
-        }
-
-        &:hover {
-            transform: scale(1.02);
-            box-shadow: 0 6px 16px rgba(vars.$color-secondary, 0.2);
-        }
-    }
-
+   
     &__text-content {
         display: flex;
         flex-direction: column;
@@ -91,21 +51,37 @@
     }
 
     // Add container padding adjustments for different screen sizes
-    @media (max-width: vars.$breakpoint-l) {
+    @include vars.above("medium") {
         &__container {
             padding: 0 40px;
         }
     }
 
-    @media (max-width: vars.$breakpoint-m) {
+    @include vars.below("medium") {
         &__container {
             padding: 0 20px;
         }
     }
 
-    @media (max-width: vars.$breakpoint-s) {
+    @include vars.below("small") {
         &__container {
             padding: 0 15px;
         }
     }
+}
+
+.welcome__link-item {
+    margin-top: vars.$spacing-xl;
+    margin-bottom: vars.$spacing-xl;
+    
+    @include vars.above("small") {
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+}
+
+.welcome__link-item:last-child {
+    margin-bottom: vars.$spacing-l;
 }

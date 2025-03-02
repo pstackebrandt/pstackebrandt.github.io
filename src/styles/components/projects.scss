@@ -1,0 +1,61 @@
+@use '../base/_typography' as typo;
+@use '../variables' as vars;
+
+// Projects component styles
+.projects {
+    width: 100%;
+    min-height: 100vh;
+
+    // Container contains the content of the projects component.
+    &__container {
+        max-width: 1050px;
+        margin: 0 auto;
+        padding: 0 vars.$spacing-xxl;
+    }
+
+    &__title {
+        color: vars.$color-title;
+        font-size: typo.$section-title-font-size;
+        margin-top: vars.$spacing-xl;
+        text-align: center;
+    }
+
+    &__intro-text {
+        font-size: typo.$body-text-font-size;
+        padding: vars.$spacing-m;
+        margin: vars.$spacing-s auto vars.$spacing-xl;
+        text-align: center;
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: vars.$spacing-l;
+        
+        > li.double-width {
+            grid-column: span 2 !important;
+        }
+    }
+
+    // Add container padding adjustments for different screen sizes
+    @media (max-width: vars.$breakpoint-l) {
+        &__container {
+            padding: 0 40px;
+        }
+    }
+
+    @media (max-width: vars.$breakpoint-m) {
+        &__container {
+            padding: 0 20px;
+        }
+    }
+
+    @media (max-width: vars.$breakpoint-s) {
+        &__container {
+            padding: 0 15px;
+        }
+    }
+} 

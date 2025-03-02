@@ -49,13 +49,13 @@ $section-title-font-size: clamp($font-size-xl, 2.2vw, $font-size-xl * $upsize);
 $article-title-font-size: clamp($font-size-l-m, 2vw, $font-size-l-m * $upsize);
 $page-subtitle-font-size: clamp($font-size-m-p, 1.8vw, $font-size-m-p * $upsize);
 
-//$body-text-font-size: 1.8vw;
 $body-text-font-size: clamp($font-size-m, 1.8vw, $font-size-m-p * $upsize-s);
-$footer-text-font-size: clamp($font-size-l-m, 2.5vw, $font-size-l-m * $upsize);
-$version-text-font-size: clamp($font-size-m, 2.25vw, $font-size-m-p * $upsize);
+$footer-text-font-size: clamp($font-size-m, 2.5vw, $font-size-m * $upsize);
+$version-text-font-size: clamp($font-size-m, 2.25vw, $font-size-m * $upsize);
 
 // Global heading styles
 // --------------------------------------------------------------------------
+// Page Title
 h1 {
     font-family: $font-family-title;
     font-size: $page-title-font-size;
@@ -64,6 +64,18 @@ h1 {
     margin-bottom: $spacing-m;
 }
 
+// Page Subtitle
+.subtitle {
+    font-family: $font-family-subtitle;
+    font-size: $page-subtitle-font-size;
+    color: $color-subtitle;
+    margin-top: $spacing-m;
+    margin-bottom: $spacing-m;
+}
+
+// Section Title
+// - Currently used in older code like impress and NotFound page
+// - Could be used in future for explicit section definitions
 h2 {
     font-family: $font-family-title;
     font-size: $font-size-l;
@@ -74,6 +86,11 @@ h2 {
     text-align: center;
 }
 
+/**
+ * Article Title / Subsection 1 Title
+ * - Currently used in error page
+ * - Could be used in future for explicit section definitions
+ */ 
 h3 {
     font-family: $font-family-subtitle;
     font-size: $font-size-m;
@@ -82,6 +99,9 @@ h3 {
     margin-bottom: $spacing-s;
 }
 
+/**
+ * Subsection 2 Title
+ */ 
 h4 {
     font-family: $font-family-subtitle;
     font-size: $font-size-s;

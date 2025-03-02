@@ -17,18 +17,21 @@ import RootLayout from "../layouts/RootLayout";
 import Error from "../pages/errors/Error";
 import Impress from '../pages/Impress';
 import NotFound from "../pages/NotFound";
+import Projects from "../pages/Projects";
 import Welcome from "../pages/Welcome";
 
 /*
-* Welcome == Hauptseite
-* NotFound == Wenn eine URL angefragt wird die nicht existiert wird diese Seite aufgerufen.
-* errors == Error wird immer dann aufgerufen wenn ein Servefehler auftritt
-* ImpressLayout == Impressum, ggf. später auch Datenschutz
+* Welcome == Main page
+* Projects == Dedicated project page
+* NotFound == This page is displayed when a URL is requested that doesn't exist
+* errors == Error is always called when a server error occurs
+* ImpressLayout == Imprint, possibly privacy policy later
  */
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />} errorElement={<Error />}>
       <Route index element={<Welcome />} />
+      <Route path="projects" element={<Projects />} />
             
       <Route path="impress" element={<ImpressLayout />}>
         <Route index element={<Impress />} />
