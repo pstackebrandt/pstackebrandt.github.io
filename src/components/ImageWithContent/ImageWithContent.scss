@@ -95,13 +95,15 @@ $image-default-width: 300px;
   // Small screen responsiveness (mobile phones)
   @include vars.below("small") {
     // Adjust image container for small screens
+    // Ensure proper image scaling for small screens
     .image-with-content__image-container {
-      // Use the mobile max width if specified, otherwise remove constraints
+      // Use the mobile max width if specified,
+      // otherwise remove constraints to allow full width
+      // If --mobile-max-width is set it consists of pixel count and suffix px created by the ImageWithContent component.
       max-width: var(--mobile-max-width, none);
       margin: 0 auto;
     }
 
-    // Ensure proper image scaling for small screens
     .responsive-image__img {
       max-width: 100%;
       height: auto;
