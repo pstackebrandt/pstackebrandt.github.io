@@ -7,7 +7,7 @@ The layout automatically adjusts from two columns to a single column on smaller 
 
 - Responsive two-column layout that collapses to single column on small screens
 - Configurable image position (left or right)
-- Customizable image width
+- Customizable image width at different screen sizes (desktop, tablet, mobile)
 - Uses ResponsiveImage component for optimal image loading
 - Supports any React components as content
 
@@ -27,9 +27,8 @@ function MyComponent() {
   return (
     <ImageWithContent
       sources={sources}
-      alt="Person smiling"
-      position="left"
-      width={300}
+      imageAlt="Person smiling"
+      imagePosition="left"
     >
       <h2>About Me</h2>
       <p>This is content that will appear next to the image.</p>
@@ -41,20 +40,23 @@ function MyComponent() {
 
 ## Props
 
-| Prop      | Type    | Required | Default | Description                                             |
-| --------- | ------- | -------- | ------- | ------------------------------------------------------- |
-| sources   | object  | Yes      | -       | Object containing image paths (same as ResponsiveImage) |
-| alt       | string  | Yes      | -       | Alternative text for the image                          |
-| children  | node    | Yes      | -       | Content to display next to the image                    |
-| className | string  | No       | ''      | Additional CSS class names                              |
-| position  | string  | No       | 'left'  | Position of image ('left' or 'right')                   |
-| width     | number  | No       | 300     | Width of image column in pixels                         |
-| lazy      | boolean | No       | true    | Whether to use lazy loading for image                   |
+| Prop           | Type    | Required | Default | Description                                             |
+| -------------- | ------- | -------- | ------- | ------------------------------------------------------- |
+| sources        | object  | Yes      | -       | Object containing image paths (same as ResponsiveImage) |
+| imageAlt       | string  | Yes      | -       | Alternative text for the image                          |
+| children       | node    | Yes      | -       | Content to display next to the image                    |
+| className      | string  | No       | ''      | Additional CSS class names                              |
+| imagePosition  | string  | No       | 'left'  | Position of image ('left' or 'right')                   |
+| imageWidth     | number  | No       | Default | Width of image column in pixels for desktop screens     |
+| mediumMaxWidth | number  | No       | Default | Maximum width of image on medium screens (tablets)      |
+| mobileMaxWidth | number  | No       | Default | Maximum width of image on small screens (phones)        |
+| lazy           | boolean | No       | true    | Whether to use lazy loading for image                   |
 
 ## Responsive Behavior
 
-- Desktop: Two-column layout with image on left or right (configurable)
-- Mobile (≤ 768px): Single-column layout with image always on top
+- Desktop: Two-column layout with image on left or right (configurable width)
+- Medium screens (≤768px): Single-column layout with customizable image width
+- Small screens (≤480px): Single-column layout with smaller image width
 
 ## Styling
 
@@ -63,7 +65,7 @@ The component uses ImageWithContent.scss for styling. You can customize the appe
 - Modifying ImageWithContent.scss directly
 - Passing a custom className prop
 - Overriding the default styles in your own stylesheet
-- Using the imageWidth prop to control image column width
+- Using the width props to control image dimensions at different screen sizes
 
 ## Dependencies
 
@@ -76,9 +78,11 @@ The component uses ImageWithContent.scss for styling. You can customize the appe
 ```jsx
 <ImageWithContent
   sources={profileImages}
-  alt="Profile picture"
-  position="right"
-  width={350}
+  imageAlt="Profile picture"
+  imagePosition="right"
+  imageWidth={350}
+  mediumMaxWidth={250}
+  mobileMaxWidth={180}
   className="about-me-section"
 >
   <h2 className="about-heading">About Me</h2>

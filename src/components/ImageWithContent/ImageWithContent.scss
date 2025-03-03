@@ -1,22 +1,19 @@
 @use "../../styles/variables" as vars;
 
-// Component dimensions
-// Default width for the image column that can be overridden via CSS custom properties
-$image-default-width: 300px;
-
+// Component that displays an image alongside content
+// Default values are defined in the JavaScript component and passed as CSS variables
+// This avoids duplication of values and ensures a single source of truth
 .image-with-content {
   display: grid;
-  // Two-column layout with fixed width for image and flexible width for content
-  // Uses CSS custom property (--image-width) with SCSS variable fallback for configuration flexibility
-  grid-template-columns: var(--image-width, $image-default-width) 1fr;
+  // Uses CSS variables set by the JavaScript component 
+  grid-template-columns: var(--image-width) 1fr;
   gap: vars.$spacing-l;
   margin-bottom: vars.$spacing-l;
 
   // Modifier class that reverses the layout to show image on the right side
-  // This is currently unused and not tested. (TODO test)
   &--image-right {
     // Reversed column order - content first, then image
-    grid-template-columns: 1fr var(--image-width, $image-default-width);
+    grid-template-columns: 1fr var(--image-width);
 
     // Position the image in the second column
     .image-with-content__image-container {
@@ -34,7 +31,7 @@ $image-default-width: 300px;
   // Container for the image with size constraints
   &__image-container {
     width: 100%;
-    max-width: var(--image-width, $image-default-width);
+    max-width: var(--image-width);
     padding: vars.$spacing-s;
     margin: 0 auto;
   }
@@ -61,8 +58,8 @@ $image-default-width: 300px;
       .image-with-content__image-container {
         grid-column: 1;
         grid-row: 1;
-        // Use the mobile max width if specified, otherwise remove constraints
-        max-width: var(--mobile-max-width, none);
+        // Use the medium max width set by the JavaScript component
+        max-width: var(--medium-max-width);
         margin: 0 auto;
       }
 
@@ -80,9 +77,8 @@ $image-default-width: 300px;
     }
 
     // Standard image container styles for medium screens
-    // Reduces width to 80% to prevent images from being too large
     &__image-container {
-      max-width: 80%;
+      max-width: var(--medium-max-width);
       grid-row: 1;
     }
 
@@ -97,13 +93,12 @@ $image-default-width: 300px;
     // Adjust image container for small screens
     // Ensure proper image scaling for small screens
     .image-with-content__image-container {
-      // Use the mobile max width if specified,
-      // otherwise remove constraints to allow full width
-      // If --mobile-max-width is set it consists of pixel count and suffix px created by the ImageWithContent component.
-      max-width: var(--mobile-max-width, none);
+      // Use the mobile max width set by the JavaScript component
+      max-width: var(--mobile-max-width);
       margin: 0 auto;
     }
 
+    // Ensure all responsive images scale appropriately, including in the right-positioned variant
     .responsive-image__img {
       max-width: 100%;
       height: auto;

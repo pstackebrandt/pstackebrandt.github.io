@@ -8,7 +8,7 @@ import './ImageWithContent.scss';
  * A component that displays an image alongside content (text, buttons, etc.)
  * Features:
  * - Configurable image position (left or right)
- * - Customizable image width
+ * - Customizable image width at different screen sizes
  * - Responsive layout that switches from side-by-side to stacked on smaller screens
  * - Support for different image sizes and formats via ResponsiveImage
  * - Optional lazy loading for performance optimization
@@ -19,8 +19,9 @@ import './ImageWithContent.scss';
  * @param {React.ReactNode} props.children - Content to display next to the image
  * @param {string} [props.className] - Additional CSS classes for customization
  * @param {string} [props.imagePosition='left'] - Position of image ('left' or 'right')
- * @param {number} [props.imageWidth=300] - Width of image column in pixels
- * @param {number} [props.mobileMaxWidth=null] - Maximum width of image on mobile screens in pixels
+ * @param {number} [props.imageWidth] - Width of image column in pixels for desktop screens
+ * @param {number} [props.mediumMaxWidth] - Maximum width of image on medium screens (tablets)
+ * @param {number} [props.mobileMaxWidth] - Maximum width of image on small screens (phones)
  * @param {boolean} [props.lazy=true] - Whether to use lazy loading for image
  * @returns {JSX.Element} A responsive layout with image and content
  */
@@ -31,14 +32,16 @@ const ImageWithContent = ({
   className = '',
   imagePosition = 'left',
   imageWidth = 300,
-  mobileMaxWidth = null,
+  mediumMaxWidth = 250,
+  mobileMaxWidth = 200,
   lazy = true
 }) => {
   // Define inline CSS variables to configure the component's layout
   // These variables are used in the SCSS file to control image dimensions
   const containerStyle = {
     '--image-width': `${imageWidth}px`,
-    '--mobile-max-width': mobileMaxWidth ? `${mobileMaxWidth}px` : 'none',
+    '--medium-max-width': `${mediumMaxWidth}px`,
+    '--mobile-max-width': `${mobileMaxWidth}px`,
   };
 
   return (
@@ -83,8 +86,9 @@ ImageWithContent.propTypes = {
   children: PropTypes.node.isRequired,   // Content to display is required
   className: PropTypes.string,           // Optional additional classes
   imagePosition: PropTypes.oneOf(['left', 'right']), // Restrict to only valid options
-  imageWidth: PropTypes.number,          // Width in pixels
-  mobileMaxWidth: PropTypes.number,      // Mobile max width in pixels
+  imageWidth: PropTypes.number,          // Width in pixels for desktop screens
+  mediumMaxWidth: PropTypes.number,      // Width for medium-sized screens (tablets)
+  mobileMaxWidth: PropTypes.number,      // Width for small mobile screens
   lazy: PropTypes.bool                   // Toggle for lazy loading
 };
 

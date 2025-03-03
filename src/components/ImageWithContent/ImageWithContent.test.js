@@ -106,6 +106,27 @@ describe('ImageWithContent', () => {
     });
   });
 
+  test('renders with custom medium and mobile widths', () => {
+    render(
+      <ImageWithContent
+        sources={mockSources}
+        imageAlt="Test image"
+        imageWidth={500}
+        mediumMaxWidth={400}
+        mobileMaxWidth={300}
+      >
+        <p>Test content</p>
+      </ImageWithContent>
+    );
+    
+    const container = screen.getByTestId('image-with-content');
+    expect(container).toHaveStyle({
+      '--image-width': '500px',
+      '--medium-max-width': '400px',
+      '--mobile-max-width': '300px'
+    });
+  });
+
   test('renders with custom className', () => {
     render(
       <ImageWithContent
@@ -142,19 +163,45 @@ describe('ImageWithContent', () => {
       <ImageWithContent
         sources={mockSources}
         imageAlt="Test image"
+        mediumMaxWidth={250}
+        mobileMaxWidth={200}
       >
         <p>Test content</p>
       </ImageWithContent>
     );
     
-    // Test mobile view
-    mockWindowResize(500);
+    // Test small screen (mobile) view
+    mockWindowResize(400);
+    
+    // Test medium screen (tablet) view
+    mockWindowResize(700);
     
     // Test desktop view 
     mockWindowResize(1024);
     
     // We can't easily test the responsive behavior directly without additional setup,
-    // but this ensures the resize handler doesn't cause errors
+    // but this ensures the resize handler doesn't cause errors and the component
+    // can handle all screen size breakpoints gracefully
     expect(screen.getByText('Test content')).toBeInTheDocument();
+  });
+
+  test('renders with default props and sets all required CSS variables', () => {
+    render(
+      <ImageWithContent
+        sources={mockSources}
+        imageAlt="Test image"
+      >
+        <p>Test content</p>
+      </ImageWithContent>
+    );
+    
+    const container = screen.getByTestId('image-with-content');
+    
+    // Check that all required CSS variables are set, even with default values
+    expect(container).toHaveStyle({
+      '--image-width': '300px',
+      '--medium-max-width': '250px',
+      '--mobile-max-width': '200px'
+    });
   });
 }); 
