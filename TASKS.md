@@ -62,7 +62,7 @@
 - **Task Order**: In the Done section, newer tasks are at the top.
 - **Priorities**: P1 (Highest) to P4 (Lowest). P5 tasks are not planned.
 - **Task Format**: Use `[ ] **Priority** TaskID [Size] Description [Depends on TX, TY]`.
-- **Linking**: For tasks related to specific files, consider adding a markdown link to the file for quick navigation.
+- **Linking**: For tasks related to specific files, consider adding a Markdown link to the file for quick navigation.
 
 ---
 
