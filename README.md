@@ -14,6 +14,9 @@
   - [Project management](#project-management)
   - [Documentation](#documentation)
   - [Cursor IDE Configuration](#cursor-ide-configuration)
+    - [.cursorignore](#cursorignore)
+    - [.cursorindexingignore](#cursorindexingignore)
+    - [How to Use](#how-to-use)
   - [History](#history)
     - [Publishing](#publishing)
 
@@ -54,7 +57,7 @@ Those will update the version number in the `package.json` file and trigger rela
 
 ## Deploy app
 
-Run deploy script (incl. build) and publish to github pages
+Run deploy script (incl. build) and publish to GitHub Pages
 
 ```powershell
 npm run deploy
@@ -78,10 +81,11 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Project management
 
-I use github for project management.
+I am currently using the `TASKS.md` file in the root of this project to track tasks.
 
-- I use the issues section to track tasks.
-- I use the projects section to track the board.
+Previously, I used GitHub for project management.
+The [GitHub Issues](https://github.com/pstackebrandt/pstackebrandt.github.io/issues) and the [GitHub Project](https://github.com/users/pstackebrandt/projects/3)
+are still available but are not actively used for now.
 
 ## Documentation
 
@@ -93,7 +97,8 @@ This project includes configuration files for Cursor IDE to improve performance 
 
 ### .cursorignore
 
-The `.cursorignore` file tells Cursor which files and directories to exclude from various operations like search, indexing, and AI context. Similar to `.gitignore`, it uses pattern matching.
+The `.cursorignore` file tells Cursor which files and directories to exclude from various operations like search, indexing,
+and AI context. Similar to `.gitignore`, it uses pattern matching.
 
 **Key exclusions:**
 - Dependencies and node_modules
@@ -105,11 +110,10 @@ The `.cursorignore` file tells Cursor which files and directories to exclude fro
 
 ### .cursorindexingignore
 
-The `.cursorindexingignore` file specifically controls what's excluded from Cursor's code indexing functionality. 
+The `.cursorindexingignore` file specifically controls what's excluded from Cursor's code indexing functionality.
 This helps improve performance by reducing the indexed codebase size.
 
 **Key exclusions:**
-
 - Build output and generated files
 - Large data files (with exceptions for config files)
 - Test fixtures and documentation files
@@ -135,4 +139,4 @@ The app runs now directly in the root folder, not in a subfolder like its predec
 
 ### Publishing
 
-- The app is now published with github pages.
+- The app is now published with GitHub Pages.
