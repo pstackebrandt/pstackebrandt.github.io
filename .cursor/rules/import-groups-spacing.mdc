@@ -1,9 +1,9 @@
 ---
-description: Empty Lines Between Import Groups
 globs: "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"
-alwaysApply: true
+alwaysApply: false
 ---
-When organizing imports in JavaScript/TypeScript files, maintain at least one empty line between different import groups to follow the eslint import/order rule.
+When organizing imports in JavaScript/TypeScript files, maintain at least one empty line between different import
+groups to follow the eslint import/order rule.
 
 Import groups are typically arranged in this order:
 1. Built-in Node.js modules
@@ -41,4 +41,3 @@ This pattern:
 - Helps maintain consistent code organization
 
 Benefits: Improves readability, makes code organization consistent, and satisfies linting requirements.
-

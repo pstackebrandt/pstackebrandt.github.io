@@ -1,18 +1,14 @@
 ---
-description: 
-globs: 
+globs: "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"
 alwaysApply: false
 ---
----
-description: Import Order Requirements for React Components
-globs: "**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"
-alwaysApply: true
----
-# Import Ordering Rules
+Import Ordering Rules
+=====================
 
 For proper linting compliance, imports must follow this specific ordering pattern:
 
-## Order by Import Group
+Order by Import Group
+---------------------
 1. External/npm modules (React, react-router-dom, etc.)
 2. Blank line
 3. Internal project modules (components, utilities)
@@ -20,13 +16,15 @@ For proper linting compliance, imports must follow this specific ordering patter
 5. Component imports in alphabetical order
 6. Image/asset imports according to specific pattern
 
-## Image/Asset Import Order
+Image/Asset Import Order
+------------------------
 For image imports with different sizes and formats:
 
 1. Group by size first (large, medium, small)
 2. For each size group, order by format (.jpg first, then .webp)
 
-### Example
+Example
+-------
 ```javascript
 // External packages
 import React from 'react';
@@ -48,6 +46,3 @@ import portraitImageSmallWebp from '../images/portrait-small.webp';
 ```
 
 This pattern satisfies ESLint import/order rules and maintains consistent code organization.
-```
-
-</rewritten_file>
