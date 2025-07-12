@@ -47,7 +47,7 @@ export default function Welcome() {
                     </p>
 
                     <p className="welcome__text">
-                        Diese Webseite ist eine zentrale Anlaufstelle, um mehr über meine Fertigkeiten und meine Projekte zu erfahren. Derzeit arbeite ich daran, hier öffentlich zugängliche Links zu meinen Projekten zu sammeln und zu präsentieren.
+                        Diese Webseite ist eine zentrale Anlaufstelle, um mehr über meine Fertigkeiten und meine Projekte zu erfahren. Entdecken Sie meine Arbeit und erfahren Sie mehr über meine Expertise.
                     </p>
                 </ImageWithContent>
 

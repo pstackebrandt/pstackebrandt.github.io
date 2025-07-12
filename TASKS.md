@@ -44,6 +44,9 @@
 
 ## Done
 
+- [x] ✅ T12 [S] Updated Welcome page text to be more professional and confident.
+- [x] ✅ T11 [S] Fixed markdownlint errors in .cursor/rules/import-groups-spacing.mdc.
+- [x] ✅ T10 [S] Fixed markdownlint errors in .cursor/rules/import-order-rules.mdc.
 - [x] ✅ T9 [S] Fix MD044 linting and update README formatting.
 - [x] ✅ T8 [S] Update .markdownlint.json configuration.
 - [x] ✅ T7 [S] Update README.md to mention TASKS.md for project management.
