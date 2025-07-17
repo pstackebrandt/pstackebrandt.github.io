@@ -12,6 +12,10 @@
 
 ## Todo
 
+### Epic: Content Updates
+
+- [ ] **P3** T16 [S] Fix grammar in GitHub repos description: change 'Einzelne von diesen' to 'Einzelne davon'.
+
 ### Epic: Nice-to-Have Features
 
 - [ ] **P4** T5 [M] Implement dark mode.
@@ -33,6 +37,12 @@
 
 ## Done
 
+- [x] ✅ T15.1 [S] User improved BlazorCookbookApp description formatting and render modes explanation.
+- [x] ✅ T15.2 [S] User updated GitHub repos description to be more precise.
+- [x] ✅ T15 [S] Update BlazorCookbookApp description with improved German text from content file.
+- [x] ✅ T14 [M] Add BlazorCookbookApp project to Projects page at top position with double-width.
+  - [x] ✅ T14.1 Add new LinkCard for BlazorCookbookApp with live demo link and German description.
+  - [x] ✅ T14.2 Move GitHub repos LinkCard up to be positioned right of BlazorCookbookApp.
 - [x] ✅ T13 [S] Removed hallucination/relict entries from TASKS.md and updated project management note.
 - [x] ✅ T12 [S] Updated Welcome page text to be more professional and confident.
 - [x] ✅ T11 [S] Fixed markdownlint errors in .cursor/rules/import-groups-spacing.mdc.

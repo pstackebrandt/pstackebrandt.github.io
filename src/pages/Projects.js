@@ -20,6 +20,28 @@ export default function Projects() {
                 <ul className="projects__list">
                     <li className="double-width">
                         <LinkCard
+                            href="https://blazor-recipes-bwaabwhrejgqehgp.germanywestcentral-01.azurewebsites.net/"
+                            text="Blazor Cookbook - Blazor Beispiele und Demos"
+                            description={`Als Lernressource für Blazor-Entwicklung implementiert diese Single Page App verschiedene Konzepte.
+                            
+                            Einige Beispiele entstanden als Übungsaufgaben aus dem Buch "Blazor Web Development Cookbook" von P. Bazyluk. Das Projekt wurde durch fortgeschrittene Demos für die Blazor Render-Modi Auto-, Server- und WebAssembly sowie eine automatische Auflistung der Beispielseiten erweitert.
+                            
+                            Bei einer Überarbeitung der Anwendung kam ein automatisiertes Aufgabenmanagement mit Cursor AI und Markdown-Dateien zum Einsatz.
+                            
+                            (Blazor mit .NET 9, Bootstrap 5, Cursor AI, Azure App Service)`}
+                        />
+                    </li>
+                    <li>
+                        <LinkCard
+                            href="https://github.com/pstackebrandt"
+                            text="Meine GitHub Repositorys"
+                            description={`Die Repositorys beinhalten Code zu zahlreichen Übungsaufgaben und Projekten. Obwohl der Großteil öffentlich zugänglich ist, fehlt oft der nötige Kontext, um Zweck und Details des Codes vollständig zu erschließen.
+
+                            Für mehrere Repositorys wird GitHub Projects als Planungswerkzeug eingesetzt. Einzelne davon sind öffentlich einsehbar.`}
+                        />
+                    </li>
+                    <li className="double-width">
+                        <LinkCard
                             href="https://pstackebrandt.github.io/hacker-stories/"
                             text="Your Hacker Stories"
                             description={`Dieses React-Trainingsprojekt setzt moderne Webtechnologien ein, um Technologie-Nachrichten zu suchen und anzuzeigen. 
@@ -50,15 +72,6 @@ export default function Projects() {
                             Als Teil des Entwicklungsprozesses sorgen automatisierte Slice-Tests mit MockMVC sowie versionierte REST-Client-Tests für eine verlässliche Qualitätsprüfung. Dieses Setup veranschaulicht nicht nur einen unkomplizierten Ansatz für REST, sondern auch eine effiziente Containerisierung und einen reibungslosen Bereitstellungsprozess.
                             
                             (Spring Boot 3, Java 21, Docker, OpenAPI, Error Handling, Slice-Tests, REST-Client-Tests, automatische Build- und Dokumentationsupdates)`}
-                        />
-                    </li>
-                    <li>
-                        <LinkCard
-                            href="https://github.com/pstackebrandt"
-                            text="Meine GitHub Repositorys"
-                            description={`Die Repositorys beinhalten Code zu zahlreichen Übungsaufgaben und Projekten. Obwohl der Großteil öffentlich zugänglich ist, fehlt oft der nötige Kontext, um Zweck und Details des Codes vollständig zu erschließen.
-
-                            Für einige Projekte wird GitHub Projects als Planungswerkzeug eingesetzt. Einzelne Projekte sind öffentlich einsehbar.`}
                         />
                     </li>
                     <li className="double-width">
