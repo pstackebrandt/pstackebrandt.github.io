@@ -1,23 +1,21 @@
 # Homepage Project Tasks
 
+**Note:** I previously used a GitHub project to organize tasks. For now I continue with this Markdown file because it works well with AI within Cursor.
+
 ---
 
 ## Next Actions
 
-*Waiting for initial tasks to be defined.*
+*Tasks are being managed through the sections below.*
 
 ---
 
 ## Todo
 
-### Epic: Core Features
+### Epic: Nice-to-Have Features
 
-- [ ] **P1** T1 [M] Set up basic project structure (e.g., React, Webpack, Babel).
-- [ ] **P2** T2 [L] Design and implement the main layout and navigation.
-
-### Epic: Content
-
-- [ ] **P3** T3 [S] Write and add content for the home page.
+- [ ] **P4** T5 [M] Implement dark mode.
+- [ ] **P4** T6 [S] Add animations to page transitions.
 
 ---
 
@@ -27,29 +25,24 @@
 
 ---
 
-## Deferred
-
-- [ ] ⏸️ T4 [S] Add a blog section. [DEFERRED] Post-launch feature.
-
----
-
 ## Backlog
 
-### Epic: Nice-to-Have Features
-
-- [ ] **P4** T5 [M] Implement dark mode.
-- [ ] **P4** T6 [S] Add animations to page transitions.
+(No backlog items currently)
 
 ---
 
 ## Done
 
+- [x] ✅ T13 [S] Removed hallucination/relict entries from TASKS.md and updated project management note.
 - [x] ✅ T12 [S] Updated Welcome page text to be more professional and confident.
 - [x] ✅ T11 [S] Fixed markdownlint errors in .cursor/rules/import-groups-spacing.mdc.
 - [x] ✅ T10 [S] Fixed markdownlint errors in .cursor/rules/import-order-rules.mdc.
 - [x] ✅ T9 [S] Fix MD044 linting and update README formatting.
 - [x] ✅ T8 [S] Update .markdownlint.json configuration.
 - [x] ✅ T7 [S] Update README.md to mention TASKS.md for project management.
+- [x] ✅ T3 [S] Write and add content for the home page.
+- [x] ✅ T2 [L] Design and implement the main layout and navigation.
+- [x] ✅ T1 [M] Set up basic project structure (React, Webpack, Babel).
 - [x] ✅ T0 [S] Initialized project repository.
 
 ---
