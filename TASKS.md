@@ -16,6 +16,15 @@
 
 - [ ] **P3** T16 [S] Fix grammar in GitHub repos description: change 'Einzelne von diesen' to 'Einzelne davon'.
 
+### Epic: Code Quality
+
+- [ ] **P3** T17 [S] Fix ESLint warnings in codebase:
+  - Fix import order in LinkCard.js (prop-types before react, empty line between groups)
+  - Fix import order in ResponsiveImage.js (prop-types before react)
+  - Remove console statement in index.js (line 24)
+  - Fix import order in RootLayout.js (empty lines between groups, bottom-nav before top-nav)
+  - Fix import order in Impress.js (react-bootstrap/Col before Container)
+
 ### Epic: Nice-to-Have Features
 
 - [ ] **P4** T5 [M] Implement dark mode.
