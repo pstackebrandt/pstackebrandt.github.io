@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.d0380dce.css",
-    "main.js": "/static/js/main.6dfc57bc.js",
+    "main.js": "/static/js/main.d09f4222.js",
     "static/js/488.f6b89a95.chunk.js": "/static/js/488.f6b89a95.chunk.js",
     "static/media/peter-stackebrandt-portrait-large.jpg": "/static/media/peter-stackebrandt-portrait-large.03bff30975cee23d0910.jpg",
     "static/media/peter-stackebrandt-portrait-large.webp": "/static/media/peter-stackebrandt-portrait-large.6efd541848d454a8ccc1.webp",
@@ -11,11 +11,11 @@
     "static/media/peter-stackebrandt-portrait-small.webp": "/static/media/peter-stackebrandt-portrait-small.b5d86298be07aae307b0.webp",
     "index.html": "/index.html",
     "main.d0380dce.css.map": "/static/css/main.d0380dce.css.map",
-    "main.6dfc57bc.js.map": "/static/js/main.6dfc57bc.js.map",
+    "main.d09f4222.js.map": "/static/js/main.d09f4222.js.map",
     "488.f6b89a95.chunk.js.map": "/static/js/488.f6b89a95.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d0380dce.css",
-    "static/js/main.6dfc57bc.js"
+    "static/js/main.d09f4222.js"
   ]
 }
