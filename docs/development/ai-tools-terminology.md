@@ -14,6 +14,7 @@ configuration details or strategies.
 
 - [Terminology Definitions](#terminology-definitions)
 - [Tool Categories](#tool-categories)
+- [Configuration Reliability](#configuration-reliability)
 - [Use Cases](#use-cases)
 - [Related Documentation](#related-documentation)
 
@@ -49,8 +50,10 @@ extension in Cursor IDE or in any terminal window (within or outside the IDE).
 - Can run as VS Code/Cursor extension
 - Can run standalone in any terminal
 - Uses `CLAUDE.md` file in project root for configuration
-- Simple markdown format (no frontmatter)
-- Reads `.cursor/rules/*.mdc` files but ignores YAML frontmatter
+- Simple Markdown format (no frontmatter)
+- Reads `.cursor/rules/*.mdc` files but ignores YAML frontmatter *(note: this
+  behavior is inferred from architecture but not explicitly documented by
+  Anthropic - needs verification)*
 - Uses Anthropic's Claude models
 
 ### Cursor CLI
@@ -101,6 +104,45 @@ IDE.
 **Uses `CLAUDE.md` (primary) + reads `.mdc` files (ignores frontmatter):**
 - Claude Code
 
+## Configuration Reliability
+
+AI coding tools vary in how consistently they follow configuration rules. Based
+on community feedback and user reports:
+
+### Claude Code
+
+- **Rule Adherence**: Reported to follow `CLAUDE.md` rules consistently
+- **User Feedback**: "Configuration actually sticks" - users report reliable
+  behavior when instructions are provided
+- **Reliability**: High consistency in following project guidelines
+- **Documentation**: Official Anthropic documentation emphasizes that `CLAUDE.md`
+  is automatically pulled into context
+
+### Cursor AI
+
+- **Known Issue**: Community reports that Cursor AI sometimes ignores rules
+  defined in `.cursor/rules/` files
+- **User Frustration**: This is a common complaint in user feedback and
+  community discussions
+- **Variability**: Rule adherence can be inconsistent, even with properly
+  configured `.mdc` files
+- **Mitigation**: The new `.cursor/rules/*.mdc` format (2026) with frontmatter
+  may improve reliability compared to legacy `.cursorrules`
+
+### Recommendation: Use Enforceable Linting as Backstop
+
+Given the variability in AI tool rule adherence:
+
+- **Primary Defense**: Use enforceable linting configs (ESLint, markdownlint,
+  Prettier) as the authoritative source of truth
+- **AI Rules as Guidance**: Treat AI instruction files as helpful context and
+  workflow guidance, not as enforcement mechanisms
+- **Verification**: Both tools can read and fix linting errors, providing a
+  reliable fallback regardless of rule adherence issues
+- **Best Practice**: See [ai-rules-organization.md](./ai-rules-organization.md)
+  for project-specific strategies on combining enforceable configs with AI
+  instruction files
+
 ## Use Cases
 
 ### When to Use Cursor AI
@@ -111,13 +153,22 @@ IDE.
 - Prefer visual, IDE-based workflow
 - Want automatic rule scoping based on file patterns
 
+**Reliability Note**: Be aware that Cursor AI may occasionally ignore
+`.cursor/rules/` configurations. Use enforceable linting as a backstop for
+critical code standards.
+
 ### When to Use Claude Code
 
 - Working in terminal-focused environments
 - Need Anthropic's specific Claude model capabilities
 - Want to use same tool across different IDEs
-- Prefer simple markdown configuration (`CLAUDE.md`)
+- Prefer simple Markdown configuration (`CLAUDE.md`)
 - Need a tool that works consistently across different editors
+- Value reliable rule adherence and consistent behavior
+
+**Reliability Note**: Claude Code is reported to follow `CLAUDE.md` rules
+consistently, making it a good choice when reliable configuration adherence is
+important.
 
 ### When to Use Cursor CLI
 
@@ -128,6 +179,10 @@ IDE.
 - Need better performance (avoiding IDE overhead)
 - Headless/background processing
 - Want Cursor's agent capabilities without the IDE
+
+**Reliability Note**: As this uses the same underlying technology as Cursor AI,
+it may share similar rule adherence characteristics. Consider using enforceable
+linting in automated workflows.
 
 ## Related Documentation
 

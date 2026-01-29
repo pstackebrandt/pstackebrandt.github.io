@@ -18,7 +18,9 @@ future decisions and implementation.
 
 - [Current Setup](#current-setup)
 - [Decisions Made](#decisions-made)
+- [Principle: Enforceable Configs as Source of Truth](#principle-enforceable-configs-as-source-of-truth)
 - [Architecture Overview](#architecture-overview)
+- [Potential Redundancy Check](#potential-redundancy-check)
 - [File Structure](#file-structure)
 - [Benefits](#benefits)
 - [Future Considerations](#future-considerations)
@@ -64,6 +66,28 @@ details). The project-specific approach:
 - **Project-wide rules**: `CLAUDE.md` serves as the central hub for
   project-specific guidelines
 
+## Principle: Enforceable Configs as Source of Truth
+
+This project follows a "single source of truth" principle for code standards:
+
+- **Enforceable configs** ([.eslintrc.js](../../.eslintrc.js),
+  [.markdownlint.jsonc](../../.markdownlint.jsonc)) define rules that are
+  automatically checked
+- **AI instruction files** provide context and workflow guidance to help AI
+  tools understand project conventions
+- **Best practice**: Avoid duplicating what can be enforced by linting tools
+
+Both Cursor AI and Claude Code can read linting errors and fix violations. The
+AI instruction files complement enforceable configs - they don't replace them.
+When linting tools enforce a rule (like import ordering or Markdown formatting),
+AI instruction files should provide context about WHY the rule exists, not
+duplicate HOW it's enforced.
+
+**Important**: This is a guiding principle for best practices, not a requirement
+to change existing files immediately. See [Potential Redundancy
+Check](#potential-redundancy-check) below for guidance on reviewing current
+files.
+
 ## Architecture Overview
 
 ```
@@ -93,6 +117,40 @@ Project Root
 - Format-specific rules (Markdown formatting)
 - Tool-specific conventions (Git, testing)
 
+## Potential Redundancy Check
+
+Some `.cursor/rules/*.mdc` files may contain content that duplicates enforceable
+linting configurations. These files should be reviewed individually to identify
+and potentially remove redundant portions while preserving unique guidance.
+
+**Files to review for potential redundancy:**
+
+1. **[import-order-rules.mdc](../../.cursor/rules/import-order-rules.mdc)** vs
+   [.eslintrc.js:61-71](../../.eslintrc.js#L61-L71)
+   - ESLint already enforces import ordering with the `import/order` rule
+   - Check if the .mdc file duplicates these rules or adds valuable context
+
+2. **[import-groups-spacing.mdc](../../.cursor/rules/import-groups-spacing.mdc)**
+   vs [.eslintrc.js](../../.eslintrc.js)
+   - ESLint's `import/order` includes `newlines-between` configuration
+   - Verify if additional guidance beyond linting rules exists
+
+3. **[markdown-guidelines.mdc](../../.cursor/rules/markdown-guidelines.mdc)** vs
+   [.markdownlint.jsonc](../../.markdownlint.jsonc)
+   - Markdownlint configuration defines all Markdown formatting rules
+   - Determine if the Markdown guidelines provide context beyond rule definitions
+
+**Clarification**: These files MAY contain redundant content, but each should be
+reviewed individually. They may include valuable non-redundant content such as:
+- Rationale for why specific rules are enforced
+- Examples of correct usage
+- Project-specific context not captured in linting configs
+- Workflow guidance related to the rules
+
+**Future Action**: A separate task should review each file and remove only the
+portions that duplicate enforceable configs, while preserving unique guidance
+and context.
+
 ## File Structure
 
 ### CLAUDE.md
@@ -114,9 +172,27 @@ Project Root
 3. **Tool Compatibility**: Both tools can use the same rule files
 4. **No Complex Setup**: No symlinks or duplicate maintenance required
 5. **Clear Separation**: Project-wide vs. scoped technical rules
-6. **Future-Proof**: Compatible with emerging standards (AGENTS.md)
+6. **Enforceable Backstop**: Linting catches violations even if AI tools ignore
+   rules, ensuring code quality
+7. **Future-Proof**: Compatible with emerging standards (AGENTS.md)
 
 ## Future Considerations
+
+### Known Tool Limitations
+
+Different AI tools have varying levels of rule adherence:
+
+- **Cursor AI**: Community reports occasional rule adherence issues - the tool
+  sometimes ignores rules defined in `.cursor/rules/` files. This is a known
+  limitation documented in user feedback.
+- **Claude Code**: More consistent rule following based on user reports - the
+  tool reliably follows instructions in `CLAUDE.md`.
+- **Mitigation Strategy**: Rely on enforceable configs (ESLint, markdownlint) as
+  a backstop to ensure code quality regardless of AI tool behavior.
+
+This variability in AI tool reliability reinforces the importance of using
+enforceable linting configurations as the authoritative source of truth for code
+standards.
 
 ### Potential Enhancements
 
@@ -126,7 +202,10 @@ Project Root
    `.cursor/rules/` files
 3. **Cursor AI Configuration**: Ensure Cursor AI is configured to reference
    `CLAUDE.md` when needed
-4. **Documentation**: Keep this file updated as the strategy evolves
+4. **Redundancy Review**: Review each `.cursor/rules/*.mdc` file to identify and
+   remove redundant portions that duplicate enforceable configs (see [Potential
+   Redundancy Check](#potential-redundancy-check))
+5. **Documentation**: Keep this file updated as the strategy evolves
 
 ### Integration Points
 
